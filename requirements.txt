@@ -1,0 +1,17 @@
+Django>=1.8.7, < 1.9
+django-logical-rules
+django-s3-folder-storage
+
+# Deployment specific
+Pillow
+dj-database-url
+gunicorn
+psycopg2
+raven
+whitenoise
+
+# Non-pypi repos
+https://github.com/AASHE/django-aashe-theme/archive/master.zip
+https://github.com/AASHE/aashe-auth/archive/master.zip
+https://github.com/AASHE/django-block-content/archive/master.zip
+https://github.com/AASHE/django-integration-settings/archive/master.zip
