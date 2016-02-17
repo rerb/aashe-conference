@@ -1,5 +1,7 @@
 # aashe-conference
 
+[![Build Status](https://travis-ci.org/AASHE/aashe-conference.svg?branch=master)](https://travis-ci.org/AASHE/aashe-conference) [![Coverage Status](https://coveralls.io/repos/github/AASHE/aashe-conference/badge.svg?branch=master)](https://coveralls.io/github/AASHE/aashe-conference?branch=master)
+
 http://conference.aashe.org/
 
 AASHE Conference micro-site.
