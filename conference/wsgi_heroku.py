@@ -4,7 +4,7 @@ import os
 from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault(
-    "DJANGO_SETTINGS_MODULE", "conference.settings.heroku")
+    "DJANGO_SETTINGS_MODULE", "conference.settings_heroku")
 
 application = Cling(get_wsgi_application())
 application = DjangoWhiteNoise(application)

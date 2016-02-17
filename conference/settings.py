@@ -13,16 +13,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-# Import authentication settings
-from integration_settings.authentication.aashe-auth import *
-
-# Import google analytics
-from integration_settings.google_analytics import *
-
-# Import logging settings
-from integration_settings.logging import *
-
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -47,16 +37,18 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'dj_database_url',
-    'gunicorn',
-    'psycopg2',
-    'raven.contrib.django.raven_compat',
-
     'conference',
     'aashe.aasheauth',
     'aashe_theme',
     'block_content',
-    'integration_settings',
+    'integration_settings.authentication',
+    'integration_settings.logging',
+    'integration_settings.google_analytics',
+
+    'dj_database_url',
+    'gunicorn',
+    'psycopg2',
+    'raven.contrib.django.raven_compat',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,7 +57,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'aasheauth.middleware.AASHEAccountMiddleware',
+    # 'aasheauth.middleware.AASHEAccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -91,6 +83,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'conference.wsgi.application'
+
+# Import authentication settings
+from integration_settings.authentication import *
+
+# Import google analytics
+from integration_settings.google_analytics import *
+
+# Import logging settings
+from integration_settings.logging import *
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

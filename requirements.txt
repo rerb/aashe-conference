@@ -14,4 +14,4 @@ whitenoise
 https://github.com/AASHE/django-aashe-theme/archive/master.zip
 https://github.com/AASHE/aashe-auth/archive/master.zip
 https://github.com/AASHE/django-block-content/archive/master.zip
-https://github.com/AASHE/django-integration-settings/archive/master.zip
+-e git+https://github.com/AASHE/django-integration-settings.git#egg=django-integration-settings
