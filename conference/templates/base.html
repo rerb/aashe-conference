@@ -1,0 +1,35 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+{% load static %}
+<head>
+    <title>AASHE Conference 2016</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+    {% block css %}
+        {% include 'aashe_theme/styles.html' %}
+    {% endblock %}
+
+</head>
+
+<div class="wrapper">
+    <div class="container">
+        {% block page %}{% endblock %}
+    </div>
+</div>
+
+{% block javascript %}
+    {% include 'aashe_theme/javascript.html' %}
+{% endblock %}
+
+</html>

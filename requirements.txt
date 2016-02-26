@@ -5,13 +5,15 @@ django-s3-folder-storage
 # Deployment specific
 Pillow
 dj-database-url
+feincms>=1.11
 gunicorn
 psycopg2
 raven
+sorl-thumbnail
 whitenoise
 
 # Non-pypi repos
 https://github.com/AASHE/django-aashe-theme/archive/master.zip
 https://github.com/AASHE/aashe-auth/archive/master.zip
 https://github.com/AASHE/django-block-content/archive/master.zip
--e git+https://github.com/AASHE/django-integration-settings.git#egg=django-integration-settings
+https://github.com/AASHE/django-integration-settings/archive/master.zip

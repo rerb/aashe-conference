@@ -49,6 +49,11 @@ INSTALLED_APPS = (
     'gunicorn',
     'psycopg2',
     'raven.contrib.django.raven_compat',
+    'feincms',
+    'mptt',
+    'feincms.module.page',
+    'feincms.module.medialibrary',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -123,15 +128,15 @@ if USE_S3:
     INSTALLED_APPS += ('s3_folder_storage',)
     from integration_settings.media.s3 import *
 else:
-    MEDIA_ROOT = os.environ.get("MEDIA_ROOT", None)
+    MEDIA_ROOT = os.environ.get("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
     STATIC_ROOT = os.environ.get(
         "STATIC_ROOT", os.path.join(BASE_DIR, 'staticfiles'))
 
 MEDIA_URL = "/conference/media/"
-STATIC_URL = "/conference/static/"
+STATIC_URL = "/conference/staticfiles/"
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'static'),
+    os.path.join(os.path.dirname(__file__), 'staticfiles'),
 )
 
 SITE_ID = '1'
