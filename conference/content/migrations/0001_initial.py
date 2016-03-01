@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('text_block', models.TextField(verbose_name=feincms.content.raw.models.RawContent)),
-                ('image', feincms.module.medialibrary.fields.MediaFileForeignKey(to='medialibrary.MediaFile')),
+                ('image', feincms.module.medialibrary.fields.MediaFileForeignKey(related_name='+', to='medialibrary.MediaFile')),
             ],
             options={
                 'verbose_name': 'Image for master slider',

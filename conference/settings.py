@@ -83,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.media',
             ],
             'debug': DEBUG,
         },
@@ -136,8 +137,6 @@ else:
 
 MEDIA_URL = "/conference/media/"
 STATIC_URL = "/conference/staticfiles/"
-
-FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join('media/medialibrary/%Y/%m')
 
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), 'staticfiles'),

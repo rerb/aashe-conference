@@ -17,8 +17,8 @@ urlpatterns = [
     url(r'logout/', logout, name="logout"),
     url(r'^admin/login/', LoginView.as_view(), name="admin_login"),
     url(r'^admin/logout/$', logout, name="admin_logout"),
-    url(r'^$', TestView.as_view(), name="home"),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^gallery/', include('gallery.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += patterns(
