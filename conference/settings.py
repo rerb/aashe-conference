@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'conference',
+    'conference.content',
     'aashe.aasheauth',
     'aashe_theme',
     'block_content',
@@ -54,6 +55,7 @@ INSTALLED_APPS = (
     'feincms.module.page',
     'feincms.module.medialibrary',
     'sorl.thumbnail',
+    'gallery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -135,11 +137,13 @@ else:
 MEDIA_URL = "/conference/media/"
 STATIC_URL = "/conference/staticfiles/"
 
+FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join('media/medialibrary/%Y/%m')
+
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), 'staticfiles'),
 )
 
-SITE_ID = '1'
+SITE_ID = 1
 USE_X_FORWARDED_HOST = True
 
 # Add a flag to override a few settings in a local development environment

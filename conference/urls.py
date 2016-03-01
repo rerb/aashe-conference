@@ -1,7 +1,7 @@
 """
     Conference Site URL Configuration
 """
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -19,6 +19,8 @@ urlpatterns = [
     url(r'^admin/logout/$', logout, name="admin_logout"),
     url(r'^$', TestView.as_view(), name="home"),
     url(r'^admin/', include(admin.site.urls)),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    # url(r'', include('feincms.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += patterns(
+    '', url(r'', include('feincms.urls')),
+)

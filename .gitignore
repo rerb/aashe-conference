@@ -63,3 +63,4 @@ target/
 #PyCharm
 .idea/
 db.sqlite3
+conference/static/img
