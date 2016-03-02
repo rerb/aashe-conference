@@ -142,7 +142,7 @@ STATIC_URL = "/conference/staticfiles/"
 FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join(MEDIA_ROOT, 'medialibrary')
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'staticfiles'),
+    os.path.join(os.path.dirname(__file__), 'static'),
 )
 
 SITE_ID = 1
