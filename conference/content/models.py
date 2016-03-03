@@ -6,6 +6,8 @@ from feincms.content.raw.models import RawContent
 from feincms.content.video.models import VideoContent
 from gallery.models import GalleryContent
 
+import os
+
 
 Page.register_templates({
     'title': _('Home Page'),
@@ -23,7 +25,8 @@ Page.register_templates({
     )
 })
 
-Page.create_content_type(MainSlider)
-Page.create_content_type(RawContent)
-Page.create_content_type(GalleryContent)
-Page.create_content_type(VideoContent)
+if os.environ.get('CMS', False):
+    Page.create_content_type(MainSlider)
+    Page.create_content_type(RawContent)
+    Page.create_content_type(GalleryContent)
+    Page.create_content_type(VideoContent)
