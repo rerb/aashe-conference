@@ -5,6 +5,7 @@ django-s3-folder-storage
 # Deployment specific
 Pillow
 dj-database-url
+dj-static
 feincms>=1.11
 gunicorn
 psycopg2

@@ -37,16 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'conference',
-    'conference.content',
-    'aashe.aasheauth',
-    'aashe_theme',
-    'block_content',
-    'integration_settings.authentication',
-    'integration_settings.logging',
-    'integration_settings.google_analytics',
-
     'dj_database_url',
+    'dj_static',
     'gunicorn',
     'psycopg2',
     'raven.contrib.django.raven_compat',
@@ -56,6 +48,15 @@ INSTALLED_APPS = (
     'feincms.module.medialibrary',
     'sorl.thumbnail',
     'gallery',
+
+    'conference',
+    'conference.content',
+    'aashe.aasheauth',
+    'aashe_theme',
+    'block_content',
+    'integration_settings.authentication',
+    'integration_settings.logging',
+    'integration_settings.google_analytics',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -153,11 +154,14 @@ if os.environ.get('LOCAL'):
     TEMPLATES[0]['OPTIONS']['debug'] = True
     THUMBNAIL_DEBUG = True
     DATABASES = {
-        'default': {
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            'ENGINE': 'django.db.backends.sqlite3',
-        },
-    }
+    'default': {
+        'NAME': 'conference',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'postgres',
+        'PASSWORD': 'sonofmogh86',
+        'HOST': 'localhost',
+        'PORT': 5433,
+    }}
 
 
 # Internationalization
