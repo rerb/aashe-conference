@@ -1,0 +1,37 @@
+.header .logo {
+  position: relative; }
+  .header .logo h1 {
+    font-family: HelveticaNeue-Light, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    display: inline-block;
+    font-size: 30px;
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    border-bottom: 3px solid white;
+    color: #555;
+    white-space: nowrap; }
+    .header .logo h1 strong {
+      display: none; }
+    .header .logo h1:hover {
+      border-bottom: 3px solid #72c02c; }
+    @media (max-width: 480px) {
+      .header .logo h1 {
+        font-size: 18px;
+        line-height: 24px;
+        bottom: 0;
+        left: 100px;
+        white-space: normal; } }
+.header .menu {
+  text-align: right;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  color: #7c8082;
+  margin-bottom: 10px;
+  text-transform: uppercase; }
+  .header .menu a {
+    color: #7c8082;
+    margin-left: 15px; }
+  @media (max-width: 991px) {
+    .header .menu {
+      margin-top: -10px; } }
