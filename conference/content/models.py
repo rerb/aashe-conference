@@ -5,6 +5,7 @@ from types.master_slider import MainSlider, SliderImage
 from feincms.content.raw.models import RawContent
 from feincms.content.video.models import VideoContent
 from gallery.models import GalleryContent
+from types.logo_ticker import LogoTicker, SponsorLogo
 
 import os
 
@@ -30,3 +31,4 @@ if os.environ.get('CMS', False):
     Page.create_content_type(RawContent)
     Page.create_content_type(GalleryContent)
     Page.create_content_type(VideoContent)
+    Page.create_content_type(LogoTicker)
