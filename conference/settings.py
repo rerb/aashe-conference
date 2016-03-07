@@ -82,10 +82,10 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.media',
                 'django.core.context_processors.static',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
             ],
             'debug': DEBUG,
         },
@@ -132,15 +132,17 @@ USE_S3 = os.environ.get('USE_S3', None)
 if USE_S3:
     INSTALLED_APPS += ('s3_folder_storage',)
     from integration_settings.media.s3 import *
+    print MEDIA_URL
+    AWS_QUERYSTRING_AUTH = True
+    FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join(DEFAULT_S3_PATH, 'medialibrary')
 else:
     MEDIA_ROOT = os.environ.get("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
     STATIC_ROOT = os.environ.get(
         "STATIC_ROOT", os.path.join(BASE_DIR, 'staticfiles'))
+    FEINCMS_MEDIALIBRARY_UPLOAD_TO = 'medialibrary'
 
 MEDIA_URL = "/media/"
 STATIC_URL = "/conference/staticfiles/"
-
-FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join(MEDIA_ROOT, 'medialibrary')
 
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), 'static'),

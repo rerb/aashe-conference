@@ -1,10 +1,11 @@
 {% load thumbnail %}
+{{ feincms_page.content.media }}
 <div class="container content-sm">
     <div class="owl-clients-v1">
         {% for image in images %}
         <div class="item">
             <a href="{{ image.url }}">
-                <img src="/media/medialibrary/{{ image }}" alt="" />
+                <img src="{{ image.image.file.url }}" alt="" />
             </a>
         </div>
         {% endfor %}
