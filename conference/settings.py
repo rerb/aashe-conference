@@ -65,7 +65,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    # 'aasheauth.middleware.AASHEAccountMiddleware',
+    # 'aashe.aasheauth.middleware.AASHEAccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -93,6 +93,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'conference.wsgi.application'
+
+AUTHENTICATION_BACKENDS = ('aashe.aasheauth.backends.AASHEBackend',
+                           'django.contrib.auth.backends.ModelBackend',)
 
 # Import authentication settings
 from integration_settings.authentication import *
