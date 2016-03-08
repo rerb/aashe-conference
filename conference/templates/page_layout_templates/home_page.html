@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load feincms_tags %}
+{% block content %}
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "masterslider" request %}
+    </div>
+    <div class="wrapper">
+        {% feincms_render_region feincms_page "call-to-action" request %}
+    </div>
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "about" request %}
+    </div>
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "parallax" request %}
+    </div>
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "sponsors" request %}
+    </div>
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "footer" request %}
+    </div>
+{% endblock %}

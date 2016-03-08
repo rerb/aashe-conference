@@ -6,8 +6,6 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 {% load static %}
 <head>
-    {{ feincms_page.content.media }}
-
     <title>AASHE Conference 2016</title>
 
     <!-- Meta -->
@@ -51,11 +49,11 @@
                                 <div class="menu">
                                     {% if user.is_authenticated %}
                                     <a href="http://www.aashe.org/user"><i class="fa fa-user"></i> My Account</a>
-                                    <a href="{% url "logout" %}">
+                                    <a href="{% url "logout" %}?next={{ request.path }}">
                                         <i class="fa fa-lock"></i> Logout, {{ user.email }}
                                     </a>
                                     {% else %}
-                                    <a href="{% url "login" %}"><i class="fa fa-lock"></i> Login</a>
+                                    <a href="{% url "login" %}?next={{ request.path }}"><i class="fa fa-lock"></i> Login</a>
                                     {% endif %}
                                 </div>
                             </div>
@@ -75,21 +73,8 @@
             </div>
             <!-- /Header -->
         {% endblock %}
-
-        {% block content %}
-        <div class="wrapper" style="padding-top:20px;">
-            {% feincms_render_region feincms_page "masterslider" request %}
-        </div>
-        <div class="wrapper" style="padding-top:20px;">
-            {% feincms_render_region feincms_page "call-to-action" request %}
-        </div>
-        <div class="wrapper" style="padding-top:20px;">
-            {% feincms_render_region feincms_page "about-info" request %}
-        </div>
-        <div>
-            {% feincms_render_region feincms_page "sponsors" request %}
-        </div>
-        {% endblock %}
+        {% block title %}{% endblock %}
+        {% block content %}{% endblock %}
     </div>
 </div>
 
