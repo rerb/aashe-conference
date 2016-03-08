@@ -1,23 +1,33 @@
 from feincms.module.page.models import Page
 from django.utils.translation import ugettext_lazy as _
-
-from types.master_slider import MainSlider, SliderImage
-from feincms.content.raw.models import RawContent
-from feincms.content.video.models import VideoContent
-from gallery.models import GalleryContent
-from types.logo_ticker import LogoTicker, SponsorLogo
-# from types.parallax_box import ParallaxBox
-from feincms.content.richtext.models import RichTextContent
-
 import os
 
+"""
+    Import built-in FeinCMS content type models
+"""
+from feincms.content.raw.models import RawContent
+from feincms.content.video.models import VideoContent
+from feincms.content.richtext.models import RichTextContent
+from gallery.models import GalleryContent
 
+"""
+    Import custom content type models
+"""
+from types.master_slider import MainSlider, SliderImage
+from types.logo_ticker import LogoTicker, SponsorLogo
+# from types.parallax_box import ParallaxBox
+# from types.call_to_action import CallToAction
+
+
+"""
+    Register page layout templates
+"""
 Page.register_templates({
     'title': _('Home Page'),
     'path': 'page_layout_templates/home_page.html',
     'regions': (
         ('main_slider', _('Main Slider')),
-        ('call-to-action', _('Call To Action Bar')),
+        ('call_to_action', _('Call To Action Bar')),
         ('about', _('About')),
         ('parallax', _('Parallax Box')),
         ('sponsors', _('Sponsors')),
@@ -25,6 +35,10 @@ Page.register_templates({
     )
 })
 
+
+"""
+    Register content types for page creation interface
+"""
 if os.environ.get('CMS', False):
     Page.create_content_type(MainSlider, regions='main_slider')
     Page.create_content_type(RawContent)
@@ -33,3 +47,4 @@ if os.environ.get('CMS', False):
     Page.create_content_type(LogoTicker, regions='sponsors')
     # Page.create_content_type(ParallaxBox)
     Page.create_content_type(RichTextContent)
+    # Page.create_content_type(CallToAction, regions='call_to_action')

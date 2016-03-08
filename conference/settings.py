@@ -159,14 +159,11 @@ if os.environ.get('LOCAL'):
     TEMPLATES[0]['OPTIONS']['debug'] = True
     THUMBNAIL_DEBUG = True
     DATABASES = {
-    'default': {
-        'NAME': 'conference',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'postgres',
-        'PASSWORD': 'sonofmogh86',
-        'HOST': 'localhost',
-        'PORT': 5433,
-    }}
+        'default': {
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.sqlite3',
+            },
+        }
 
 
 # Internationalization

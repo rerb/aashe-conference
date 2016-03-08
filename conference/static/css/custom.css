@@ -36,3 +36,7 @@
   @media (max-width: 991px) {
     .header .menu {
       margin-top: -10px; } }
+
+.parallax-quote {
+  background: none;
+}
