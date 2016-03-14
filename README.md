@@ -19,3 +19,11 @@ To deploy, simply push to the Heroku remote:
     git push heroku master
 
 Use Heroku control panel to promote to staging and production.
+
+## Database
+
+For the initial installation, run syncdb and migrate as usual. After this is complete, set an environment variable CMS=True. This enables the registration of content types in content/models.py.
+
+After setting this variable, simply run syncdb again to create the content type tables.
+
+This is only necessary for the creation of the database (due to circular dependencies with the medialibrary tables). For future deployments, run syncdb to load new content types (FeinCMS does not use migrations) and migrate as you normally would.
