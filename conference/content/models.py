@@ -48,3 +48,11 @@ if os.environ.get('CMS', False):
     # Page.create_content_type(ParallaxBox)
     Page.create_content_type(RichTextContent)
     # Page.create_content_type(CallToAction, regions='call_to_action')
+
+
+"""
+    Register page extension modules
+"""
+Page.register_extensions(
+    'feincms.module.page.extensions.navigation',
+)

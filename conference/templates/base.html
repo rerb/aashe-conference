@@ -60,6 +60,9 @@
                             </div>
                         </div>
                         <div class="row">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                            </button>
                             <div class="col-md-8 col-sm-12">
                                 <a href="http://www.aashe.org/" class="logo">
                                     <img src="{% static 'img/aashe10_logo.png' %}" alt="AASHE logo" title="" />
@@ -69,6 +72,9 @@
                                 </a>
                             </div>
                         </div>
+
+                        {% include 'navigation_menu.html' %}
+
                     </div>
                 </div>
             </div>
