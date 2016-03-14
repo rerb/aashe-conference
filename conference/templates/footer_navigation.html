@@ -1,0 +1,31 @@
+{% load feincms_page_tags %}
+{% feincms_nav feincms_page level=1 depth=1 as navitems %}
+
+<div class="footer-default">
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                {% for node in navitems %}
+                    {% feincms_nav node level=2 depth=10 as subpages %}
+                    <div class="col-md-2" style="display: inline-block;">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            <div class="heading-footer>">
+                                <h2>{{ node }}</h2>
+                            </div>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ node.get_absolute_url }}">{{ node }}</a>
+                            </li>
+                            {% for subpage in subpages %}
+                                <li>
+                                    <a href="{{ subpage.get_absolute_url }}">{{ subpage }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,7 @@ class LogoTicker(models.Model):
 
     class Meta:
         abstract = True
+        verbose_name = "Logo Image Ticker"
 
     def render(self, **kwargs):
         images = self.images.select_related()
@@ -18,9 +19,11 @@ class LogoTicker(models.Model):
 
 
 class SponsorLogo(models.Model):
-    name = models.TextField(max_length=255)
-    image = MediaFileForeignKey(MediaFile, related_name='+', limit_choices_to={'type': 'image'})
-    url = models.TextField(max_length=255)
+    name = models.TextField(max_length=255, verbose_name="Sponsor Name")
+    image = MediaFileForeignKey(MediaFile, related_name='+',
+                                limit_choices_to={'type': 'image'},
+                                verbose_name="Logo Image")
+    url = models.TextField(max_length=255, verbose_name="Link URL")
 
     class Meta:
         verbose_name = 'Sponsor Logo'
