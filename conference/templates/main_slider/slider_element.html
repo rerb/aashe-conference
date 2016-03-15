@@ -1,12 +1,44 @@
 {% load static %}
 {{ feincms_page.content.media }}
-<div class="ms-slide">
-    <img src="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/blank.gif' %}" data-src="{{ image.file.url }}" alt="">
-    <div class="ms-layer ms-promo-info" style="left:15px; top:160px"
+<div class="ms-slide" style="vertical-align: middle;">
+<img src="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/blank.gif' %}" data-src="{{ image.file.url }}" alt="">
+    <div class="ms-layer ms-promo-info ms-promo-info-in color-light" style="left:15px; top:160px; text-shadow: -1px 1px #000000;"
         data-effect="bottom(40)"
-        data-duration="1000"
-        data-delay="400"
+        data-duration="2000"
+        data-delay="700"
         data-ease="easeOutExpo">
-        {{ text_block }}
+        {{ text_header_line_1 }}
     </div>
+
+    <div class="ms-layer ms-promo-info ms-promo-info-in color-light" style="left:15px; top:210px; text-shadow: -1px 1px #000000;"
+        data-effect="bottom(40)"
+        data-duration="2000"
+        data-delay="1000"
+        data-ease="easeOutExpo">
+    <span class="color-green">{{ text_header_line_2 }}</span></div>
+
+    <div class="ms-layer ms-promo-sub color-light" style="left:15px; top:310px; background-color: rgba(120,120,120,0.7); padding:10px; border-radius:50px;"
+        data-effect="bottom(40)"
+        data-duration="2000"
+        data-delay="1300"
+        data-ease="easeOutExpo">
+    <span>{{ text_block }}</span></div>
+
+    {% if button_text_1 %}
+        <a class="ms-layer btn-u" style="left:15px; top:390px; border-radius:25px;" href="{{ button_link_1 }}"
+            data-effect="bottom(40)"
+            data-duration="2000"
+            data-delay="1300"
+            data-ease="easeOutExpo"
+        >{{ button_text_1 }}</a>
+    {% endif %}
+
+    {% if button_text_2 %}
+        <a class="ms-layer btn-u btn-u-dark" style="left:150px; top:390px; border-radius:25px;" href="{{ button_link_2 }}"
+            data-effect="bottom(40)"
+            data-duration="2000"
+            data-delay="1300"
+            data-ease="easeOutExpo"
+        >{{ button_text_2 }}</a>
+    {% endif %}
 </div>

@@ -2,8 +2,8 @@ from django.db import models
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from feincms.module.medialibrary.models import MediaFile
-from feincms.content.raw.models import RawContent
 from feincms.module.medialibrary.fields import MediaFileForeignKey
+from feincms.content.richtext.models import RichTextField
 
 
 class MainSlider(models.Model):
@@ -24,7 +24,13 @@ class MainSlider(models.Model):
         for image in images:
             element = render_to_string('main_slider/slider_element.html', {
                 'image': image.image,
-                'text_block': mark_safe(image.text_block),
+                'text_header_line_1': image.text_header_line_1,
+                'text_header_line_2': image.text_header_line_2,
+                'text_block': image.text_block,
+                'button_link_1': image.button_link_1,
+                'button_text_1': image.button_text_1,
+                'button_link_2': image.button_link_2,
+                'button_text_2': image.button_text_2,
             })
             elements += element
         return elements
@@ -33,7 +39,13 @@ class MainSlider(models.Model):
 class SliderImage(models.Model):
     image = MediaFileForeignKey(MediaFile, related_name='+',
                                 limit_choices_to={'type': 'image'})
-    text_block = models.TextField(RawContent)
+    text_header_line_1 = models.TextField(max_length=15)
+    text_header_line_2 = models.TextField(max_length=25)
+    text_block = models.TextField(max_length=150)
+    button_link_1 = models.URLField()
+    button_text_1 = models.TextField(max_length=15)
+    button_link_2 = models.URLField()
+    button_text_2 = models.TextField(max_length=15)
 
     class Meta:
         verbose_name = 'Image for master slider'
