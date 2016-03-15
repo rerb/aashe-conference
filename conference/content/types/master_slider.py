@@ -3,7 +3,6 @@ from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from feincms.module.medialibrary.models import MediaFile
 from feincms.module.medialibrary.fields import MediaFileForeignKey
-from feincms.content.richtext.models import RichTextField
 
 
 class MainSlider(models.Model):
