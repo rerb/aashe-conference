@@ -62,18 +62,15 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                             <span class="sr-only">Toggle navigation</span>
                         </button>
-                        <div class="col-md-8 col-sm-12">
-                            <a href="http://www.aashe.org/" class="logo">
+                        <div style="float: left">
+                            <a href="{{ home.get_absolute_url }}" class="logo">
                                 <img src="{% static 'img/aashe10_logo.png' %}" alt="AASHE logo" title="" />
                             </a>
-                            <a href="/home" class="logo">
-                                <h1>AASHE Conference 2016</h1>
-                            </a>
+                        </div>
+                        <div style="float: right;">
+                            {% include 'navigation_menu.html' %}
                         </div>
                     </div>
-
-                    {% include 'navigation_menu.html' %}
-
                 </div>
             </div>
         </div>

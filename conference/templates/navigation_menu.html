@@ -2,7 +2,7 @@
 {% feincms_nav feincms_page level=1 depth=1 as navitems %}
 <div class="collapse navbar-collapse navbar-responsive-collapse">
     <div class="menu-container">
-        <ul class="nav navbar-nav" style="float: left;">
+        <ul class="nav navbar-nav">
             {% for node in navitems %}
                 {% feincms_nav node level=2 depth=10 as subpages %}
                 <li class="dropdown">
