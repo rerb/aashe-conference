@@ -29,66 +29,64 @@
 </head>
 
 <div class="wrapper">
-    <div class="container">
-        {% block header %}
-            <div class="wrapper">
-                <!-- Header -->
-                <div class="container">
-                    <div class="header">
-                        <div class="row top-nav">
-                            <div class="col-md-8 col-sm-12 aashe-tabs">
-                              <a href="http://www.aashe.org/" class="left">
-                                aashe</a>
-                              <a href="http://stars.aashe.org/" class="left">
-                                stars</a>
-                              <a href="http://conference.aashe.org/" class="left">
-                                conference</a>
-                              <a href="http://bulletin.aashe.org/" class="left">
-                                bulletin</a>
-                            </div>
-                            <div class="col-md-4 col-sm-12">
-                                <div class="menu">
-                                    {% if user.is_authenticated %}
-                                    <a href="http://www.aashe.org/user"><i class="fa fa-user"></i> My Account</a>
-                                    <a href="{% url "logout" %}?next={{ request.path }}">
-                                        <i class="fa fa-lock"></i> Logout, {{ user.email }}
-                                    </a>
-                                    {% else %}
-                                    <a href="{% url "login" %}?next={{ request.path }}"><i class="fa fa-lock"></i> Login</a>
-                                    {% endif %}
-                                </div>
+    {% block header %}
+        <div class="wrapper">
+            <!-- Header -->
+            <div class="container">
+                <div class="header">
+                    <div class="row top-nav">
+                        <div class="col-md-8 col-sm-12 aashe-tabs">
+                          <a href="http://www.aashe.org/" class="left">
+                            aashe</a>
+                          <a href="http://stars.aashe.org/" class="left">
+                            stars</a>
+                          <a href="http://conference.aashe.org/" class="left">
+                            conference</a>
+                          <a href="http://bulletin.aashe.org/" class="left">
+                            bulletin</a>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="menu">
+                                {% if user.is_authenticated %}
+                                <a href="http://www.aashe.org/user"><i class="fa fa-user"></i> My Account</a>
+                                <a href="{% url "logout" %}?next={{ request.path }}">
+                                    <i class="fa fa-lock"></i> Logout, {{ user.email }}
+                                </a>
+                                {% else %}
+                                <a href="{% url "login" %}?next={{ request.path }}"><i class="fa fa-lock"></i> Login</a>
+                                {% endif %}
                             </div>
                         </div>
-                        <div class="row">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                            </button>
-                            <div class="col-md-8 col-sm-12">
-                                <a href="http://www.aashe.org/" class="logo">
-                                    <img src="{% static 'img/aashe10_logo.png' %}" alt="AASHE logo" title="" />
-                                </a>
-                                <a href="/home" class="logo">
-                                    <h1>AASHE Conference 2016</h1>
-                                </a>
-                            </div>
-                        </div>
-
-                        {% include 'navigation_menu.html' %}
-
                     </div>
+                    <div class="row">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                        </button>
+                        <div class="col-md-8 col-sm-12">
+                            <a href="http://www.aashe.org/" class="logo">
+                                <img src="{% static 'img/aashe10_logo.png' %}" alt="AASHE logo" title="" />
+                            </a>
+                            <a href="/home" class="logo">
+                                <h1>AASHE Conference 2016</h1>
+                            </a>
+                        </div>
+                    </div>
+
+                    {% include 'navigation_menu.html' %}
+
                 </div>
             </div>
-            <!-- /Header -->
-        {% endblock %}
+        </div>
+        <!-- /Header -->
+    {% endblock %}
 
-        {% block title %}{% endblock %}
+    {% block title %}{% endblock %}
 
-        {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
 
-        {% block footer %}
-            {% include 'footer_navigation.html' %}
-        {% endblock %}
-    </div>
+    {% block footer %}
+        {% include 'footer_navigation.html' %}
+    {% endblock %}
 </div>
 
 {% block javascript %}

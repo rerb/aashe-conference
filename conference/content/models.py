@@ -16,7 +16,7 @@ from gallery.models import GalleryContent
 from types.master_slider import MainSlider, SliderImage
 from types.logo_ticker import LogoTicker, SponsorLogo
 # from types.parallax_box import ParallaxBox
-# from types.call_to_action import CallToAction
+from types.call_to_action import CallToAction
 
 
 """
@@ -47,7 +47,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(LogoTicker, regions='sponsors')
     # Page.create_content_type(ParallaxBox)
     Page.create_content_type(RichTextContent)
-    # Page.create_content_type(CallToAction, regions='call_to_action')
+    Page.create_content_type(CallToAction, regions='call_to_action')
 
 
 """
