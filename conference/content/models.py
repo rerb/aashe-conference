@@ -22,6 +22,7 @@ from types.buttons import SingleButton, DoubleButton
 from types.single_image_banner import SingleImageBanner
 from types.featured_image_link_pane import FeaturedImageLinkPane
 from types.medium_image import MediumImage
+from types.large_image import LargeImage
 
 
 """
@@ -43,6 +44,7 @@ Page.register_templates({
     'regions': (
         ('main_slider', _('Main Slider')),
         ('call_to_action', _('Call To Action Bar')),
+        ('large_image', _('Large Image')),
         ('featured', _('Featured')),
         ('rich-text-left-column', _('Left Column Text Block')),
         ('medium-image-right-column', _('Right Column Image')),
@@ -71,6 +73,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(SingleImageBanner)
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
     Page.create_content_type(MediumImage)
+    Page.create_content_type(LargeImage)
 
 
 """
