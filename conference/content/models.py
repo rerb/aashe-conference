@@ -20,6 +20,7 @@ from types.logo_ticker import LogoTicker, SponsorLogo
 from types.call_to_action import CallToAction
 from types.buttons import SingleButton, DoubleButton
 from types.single_image_banner import SingleImageBanner
+from types.featured_image_link_pane import FeaturedImageLinkPane
 
 
 """
@@ -41,6 +42,7 @@ Page.register_templates({
     'regions': (
         ('main_slider', _('Main Slider')),
         ('call_to_action', _('Call To Action Bar')),
+        ('featured', _('Featured')),
         ('about', _('About')),
         ('parallax', _('Parallax Box')),
         ('sponsors', _('Sponsors')),
@@ -54,7 +56,7 @@ Page.register_templates({
 """
 if os.environ.get('CMS', False):
     Page.create_content_type(MainSlider, regions='main_slider')
-    Page.create_content_type(RawContent)
+    # Page.create_content_type(RawContent)
     Page.create_content_type(GalleryContent)
     Page.create_content_type(VideoContent)
     Page.create_content_type(LogoTicker, regions='sponsors')
@@ -64,6 +66,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
     Page.create_content_type(SingleImageBanner)
+    Page.create_content_type(FeaturedImageLinkPane)
 
 
 """

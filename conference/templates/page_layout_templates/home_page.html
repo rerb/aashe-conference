@@ -9,6 +9,11 @@
     </div>
     <div class="container">
         <div class="wrapper" style="padding-top:20px;">
+            <div class="row featured-blog">
+                {% feincms_render_region feincms_page "featured" request %}
+            </div>
+        </div>
+        <div class="wrapper" style="padding-top:20px;">
             {% feincms_render_region feincms_page "about" request %}
         </div>
     </div>

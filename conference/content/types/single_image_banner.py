@@ -11,6 +11,7 @@ class SingleImageBanner(models.Model):
 
     class Meta:
         abstract = True
+        verbose_name = "Static Single Image Banner"
 
     def render(self, **kwargs):
         return render_to_string('single_image_banner/single_image_banner.html', {

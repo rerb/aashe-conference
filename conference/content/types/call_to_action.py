@@ -11,6 +11,7 @@ class CallToAction(models.Model):
 
     class Meta:
         abstract = True
+        verbose_name = "Call To Action Bar"
 
     def render(self, **kwargs):
         return render_to_string('call_to_action/call_to_action.html', {

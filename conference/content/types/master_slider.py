@@ -10,6 +10,7 @@ class MainSlider(models.Model):
 
     class Meta:
         abstract = True
+        verbose_name = "Main Slider"
 
     def render(self, **kwargs):
         images = self.images.select_related()
