@@ -13,12 +13,23 @@ from gallery.models import GalleryContent
 """
     Import custom content type models
 """
+from gallery import specs
 from types.master_slider import MainSlider, SliderImage
 from types.logo_ticker import LogoTicker, SponsorLogo
 # from types.parallax_box import ParallaxBox
 from types.call_to_action import CallToAction
 from types.buttons import SingleButton, DoubleButton
 from types.single_image_banner import SingleImageBanner
+
+
+"""
+    Must manually define available gallery types from feincms_gallery,
+    they are not made available automatically for some reason
+"""
+GALLERY_TYPES = [
+    specs.ClassicLightbox,
+]
+GALLERY_TYPES[0].columns = 6
 
 
 """
