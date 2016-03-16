@@ -18,6 +18,7 @@ from types.logo_ticker import LogoTicker, SponsorLogo
 # from types.parallax_box import ParallaxBox
 from types.call_to_action import CallToAction
 from types.buttons import SingleButton, DoubleButton
+from types.single_image_banner import SingleImageBanner
 
 
 """
@@ -51,6 +52,8 @@ if os.environ.get('CMS', False):
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
+    Page.create_content_type(SingleImageBanner)
+
 
 """
     Register page extension modules

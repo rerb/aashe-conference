@@ -11,7 +11,7 @@
 
     <!-- Meta -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/masterslider.css' %}">
         <link rel='stylesheet' href="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/skins/black-2/style.css' %}">
         <link rel='stylesheet' href="{% static 'css/custom.css' %}">
+        <link rel="stylesheet" href="{% static 'flipclock/compiled/flipclock.css' %}">
     {% endblock %}
 </head>
 
@@ -46,6 +47,7 @@
                             bulletin</a>
                         </div>
                         <div class="col-md-4 col-sm-12">
+                            <div class="clock" style="float:left; zoom: 0.2; width: 40%;"></div>
                             <div class="menu">
                                 {% if user.is_authenticated %}
                                 <a href="http://www.aashe.org/user"><i class="fa fa-user"></i> My Account</a>
@@ -112,8 +114,21 @@
             OwlCarousel.initOwlCarousel();
         });
     </script>
+    <script src="{% static 'flipclock/compiled/flipclock.min.js' %}"></script>
 
     <!--Custom JS -->
+    <script type="text/javascript">
+        function getTimeRemaining(endtime) {
+          var t = Date.parse(endtime) - Date.parse(new Date());
+          return Math.floor(t / 1000)
+        }
+        var clock = $('.clock').FlipClock(
+                Math.floor((Date.parse(new Date("2016-10-9")) - Date.parse(new Date()))/1000), {
+            clockFace: 'DailyCounter',
+            countdown: true,
+        });
+    </script>
+
     <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 
     <!--[if lt IE 9]>
