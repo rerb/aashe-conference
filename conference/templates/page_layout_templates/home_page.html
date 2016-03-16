@@ -13,7 +13,13 @@
                 {% feincms_render_region feincms_page "featured" request %}
             </div>
         </div>
-        <div class="wrapper" style="padding-top:20px;">
+        <div class="container content-md">
+            <div class="col-md-6" style="float:left;">
+                {% feincms_render_region feincms_page "rich-text-left-column" request %}
+            </div>
+            {% feincms_render_region feincms_page "medium-image-right-column" %}
+        </div>
+        <div class="container content-md" style="padding-top:20px;">
             {% feincms_render_region feincms_page "about" request %}
         </div>
     </div>

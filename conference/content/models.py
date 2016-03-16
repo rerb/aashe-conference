@@ -21,6 +21,7 @@ from types.call_to_action import CallToAction
 from types.buttons import SingleButton, DoubleButton
 from types.single_image_banner import SingleImageBanner
 from types.featured_image_link_pane import FeaturedImageLinkPane
+from types.medium_image import MediumImage
 
 
 """
@@ -30,7 +31,7 @@ from types.featured_image_link_pane import FeaturedImageLinkPane
 GALLERY_TYPES = [
     specs.ClassicLightbox,
 ]
-GALLERY_TYPES[0].columns = 6
+GALLERY_TYPES[0].columns = 5
 
 
 """
@@ -43,6 +44,8 @@ Page.register_templates({
         ('main_slider', _('Main Slider')),
         ('call_to_action', _('Call To Action Bar')),
         ('featured', _('Featured')),
+        ('rich-text-left-column', _('Left Column Text Block')),
+        ('medium-image-right-column', _('Right Column Image')),
         ('about', _('About')),
         ('parallax', _('Parallax Box')),
         ('sponsors', _('Sponsors')),
@@ -66,7 +69,8 @@ if os.environ.get('CMS', False):
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
     Page.create_content_type(SingleImageBanner)
-    Page.create_content_type(FeaturedImageLinkPane)
+    Page.create_content_type(FeaturedImageLinkPane, regions='featured')
+    Page.create_content_type(MediumImage)
 
 
 """
