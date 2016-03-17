@@ -1,35 +1,43 @@
 {% extends 'base.html' %}
 {% load feincms_tags %}
 {% block content %}
+    {# Main Slider #}
     <div class="wrapper">
         {% feincms_render_region feincms_page "main_slider" request %}
     </div>
+    {# Call to Action Bar #}
     <div class="wrapper">
         {% feincms_render_region feincms_page "call_to_action" request %}
     </div>
     <div class="container">
-        <div class="wrapper" style="padding-top:20px;">
-            {% feincms_render_region feincms_page "large_image" request %}
+        {# Two-column text and image#}
+        <div class="container content-md">
+            <div class="col-md-6" style="float:left;">
+                {% feincms_render_region feincms_page "rich-text-left-column" request %}
+            </div>
+            {% feincms_render_region feincms_page "medium-image-right-column" request %}
         </div>
+        {# Parallax Box 1 #}
+        <div class="wrapper" style="padding-top:20px;">
+            {% feincms_render_region feincms_page "parallax_box_1" request %}
+        </div>
+        {# About #}
+        <div class="container content-md" style="padding-top:20px;">
+            {% feincms_render_region feincms_page "about" request %}
+        </div>
+        {# Parallax Box 2 #}
+        <div class="wrapper" style="padding-top:20px;">
+            {% feincms_render_region feincms_page "parallax_box_2" request %}
+        </div>
+        {# Featured #}
         <div class="wrapper" style="padding-top:20px;">
             <div class="row featured-blog">
                 {% feincms_render_region feincms_page "featured" request %}
             </div>
         </div>
-        <div class="container content-md">
-            <div class="col-md-6" style="float:left;">
-                {% feincms_render_region feincms_page "rich-text-left-column" request %}
-            </div>
-            {% feincms_render_region feincms_page "medium-image-right-column" %}
-        </div>
-        <div class="container content-md" style="padding-top:20px;">
-            {% feincms_render_region feincms_page "about" request %}
-        </div>
     </div>
+    {# Sponsor Ticker #}
     <div class="wrapper" style="padding-top:20px;">
         {% feincms_render_region feincms_page "sponsors" request %}
-    </div>
-    <div class="wrapper" style="padding-top:20px;">
-        {% feincms_render_region feincms_page "footer" request %}
     </div>
 {% endblock %}

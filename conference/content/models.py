@@ -38,22 +38,37 @@ GALLERY_TYPES[0].columns = 5
 """
     Register page layout templates
 """
-Page.register_templates({
-    'title': _('Home Page'),
-    'path': 'page_layout_templates/home_page.html',
-    'regions': (
-        ('main_slider', _('Main Slider')),
-        ('call_to_action', _('Call To Action Bar')),
-        ('large_image', _('Large Image')),
-        ('featured', _('Featured')),
-        ('rich-text-left-column', _('Left Column Text Block')),
-        ('medium-image-right-column', _('Right Column Image')),
-        ('about', _('About')),
-        ('parallax', _('Parallax Box')),
-        ('sponsors', _('Sponsors')),
-        ('footer', _('Footer')),
-    )
-})
+Page.register_templates(
+    {
+        'title': _('Test Page'),
+        'path': 'page_layout_templates/test_layout.html',
+        'regions': (
+            ('main_slider', _('Main Slider')),
+            ('call_to_action', _('Call To Action Bar')),
+            ('large_image', _('Large Image')),
+            ('featured', _('Featured')),
+            ('rich-text-left-column', _('Left Column Text Block')),
+            ('medium-image-right-column', _('Right Column Image')),
+            ('about', _('About')),
+            ('parallax', _('Parallax Box')),
+            ('sponsors', _('Sponsors')),
+            ('footer', _('Footer')),
+        )},
+    {
+        'title': _('Home Page'),
+        'path': 'page_layout_templates/home_page.html',
+        'regions': (
+            ('main_slider', _('Main Slider')),
+            ('call_to_action', _('Call To Action Bar')),
+            ('rich-text-left-column', _('Left Column Text Block')),
+            ('medium-image-right-column', _('Right Column Image')),
+            ('parallax_box_1', _('Parallax Box 1')),
+            ('about', _('About')),
+            ('parallax_box_2', _('Parallax Box 2')),
+            ('featured', _('Featured')),
+            ('sponsors', _('Sponsors')),
+        )},
+)
 
 
 """

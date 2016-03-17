@@ -168,6 +168,11 @@ if os.environ.get('LOCAL'):
             'ENGINE': 'django.db.backends.sqlite3',
             },
         }
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        }
+    }
 
 
 # Internationalization
