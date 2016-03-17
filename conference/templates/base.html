@@ -5,7 +5,10 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 {% load static %}
+{% load compress %}
+{% load cache %}
 
+{% cache 86400 head %}
 <head>
     <title>AASHE Conference 2016</title>
 
@@ -19,6 +22,7 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 
     {% block css %}
+        {% compress css %}
         {% include 'aashe_theme/styles.html' %}
         <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/fancybox/source/jquery.fancybox.css' %}">
         <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
@@ -27,8 +31,10 @@
         <link rel='stylesheet' href="{% static 'css/custom.css' %}">
         <link rel="stylesheet" href="{% static 'flipclock/compiled/flipclock.css' %}">
         <link rel="stylesheet" href="{% static 'content/gallery/classic.css' %}">
+        {% endcompress %}
     {% endblock %}
 </head>
+{% endcache %}
 
 <div class="wrapper">
     {% block header %}
@@ -81,6 +87,7 @@
         <!-- /Header -->
     {% endblock %}
 
+    {% cache 86400 request.path %}
     {% block title %}{% endblock %}
 
     {% block content %}{% endblock %}
@@ -88,9 +95,12 @@
     {% block footer %}
         {% include 'footer_navigation.html' %}
     {% endblock %}
+    {% endcache %}
 </div>
 
+{% cache 86400 javascript %}
 {% block javascript %}
+    {% compress js %}
     {% include 'aashe_theme/javascript.html' %}
     <!-- JS Implementing Plugins -->
     <script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/jquery.parallax.js' %}"></script>
@@ -126,6 +136,8 @@
         <script src="{% static 'aashe_theme/unify/plugins/html5shiv.js' %}"></script>
         <script src="{% static 'aashe_theme/unify/plugins/placeholder-IE-fixes.js' %}"></script>
     <![endif]-->
+{% endcompress %}
 {% endblock %}
+{% endcache %}
 
 </html>

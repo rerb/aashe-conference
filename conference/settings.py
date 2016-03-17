@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'feincms.module.medialibrary',
     'sorl.thumbnail',
     'gallery',
+    'compressor',
 
     'conference',
     'conference.content',
@@ -70,6 +71,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+from memcacheify import memcacheify
+CACHES = memcacheify()
 
 ROOT_URLCONF = 'conference.urls'
 

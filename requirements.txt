@@ -6,9 +6,12 @@ django-s3-folder-storage
 Pillow
 dj-database-url
 dj-static
+django-compressor==1.5
+django-heroku-memcacheify
 feincms>=1.11
 gunicorn
 psycopg2
+pylibmc
 raven
 sorl-thumbnail
 whitenoise
