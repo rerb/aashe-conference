@@ -174,6 +174,15 @@ if os.environ.get('LOCAL'):
         }
     }
 
+if os.environ.get('HEROKU_DEV'):
+    TEMPLATES[0]['OPTIONS']['debug'] = True
+    THUMBNAIL_DEBUG = True
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        }
+    }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
