@@ -40,19 +40,16 @@ GALLERY_TYPES[0].columns = 5
 """
 Page.register_templates(
     {
-        'title': _('Test Page'),
-        'path': 'page_layout_templates/test_layout.html',
+        'title': _('Detail Page'),
+        'path': 'page_layout_templates/detail_page.html',
         'regions': (
-            ('main_slider', _('Main Slider')),
-            ('call_to_action', _('Call To Action Bar')),
-            ('large_image', _('Large Image')),
-            ('featured', _('Featured')),
             ('rich-text-left-column', _('Left Column Text Block')),
             ('medium-image-right-column', _('Right Column Image')),
-            ('about', _('About')),
-            ('parallax', _('Parallax Box')),
+            ('featured', _('Featured')),
+            ('main_content', _('Main Content')),
+            ('call_to_action', _('Parallax Box')),
+            ('additional_content', _('Additional Content')),
             ('sponsors', _('Sponsors')),
-            ('footer', _('Footer')),
         )},
     {
         'title': _('Home Page'),
@@ -66,6 +63,20 @@ Page.register_templates(
             ('about', _('About')),
             ('parallax_box_2', _('Parallax Box 2')),
             ('featured', _('Featured')),
+            ('sponsors', _('Sponsors')),
+        )},
+    {
+        'title': _('Test Page'),
+        'path': 'page_layout_templates/test_layout.html',
+        'regions': (
+            ('main_slider', _('Main Slider')),
+            ('call_to_action', _('Call To Action Bar')),
+            ('large_image', _('Large Image')),
+            ('featured', _('Featured')),
+            ('rich-text-left-column', _('Left Column Text Block')),
+            ('medium-image-right-column', _('Right Column Image')),
+            ('about', _('About')),
+            ('parallax', _('Parallax Box')),
             ('sponsors', _('Sponsors')),
         )},
 )

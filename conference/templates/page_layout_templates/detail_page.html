@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load feincms_tags %}
+{% block content %}
+    <div class="container">
+        <h1 class="pull-left">{{ feincms_page }}</h1>
+    </div>
+    <div class="container">
+        <div class="container content-md">
+            <div class="col-md-6" style="float:left;">
+                {% feincms_render_region feincms_page "rich-text-left-column" request %}
+            </div>
+            {% feincms_render_region feincms_page "medium-image-right-column" request %}
+        </div>
+        <div class="wrapper" style="padding-top:20px;">
+            <div class="row featured-blog">
+                {% feincms_render_region feincms_page "featured" request %}
+            </div>
+        </div>
+        <div class="wrapper">
+            {% feincms_render_region feincms_page "main_content" request %}
+        </div>
+    </div>
+    <div class="wrapper">
+        {% feincms_render_region feincms_page "call_to_action" request %}
+    </div>
+    <div class="container">
+        <div class="wrapper" style="padding-top:20px;">
+            {% feincms_render_region feincms_page "additional_content" request %}
+        </div>
+    </div>
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "sponsors" request %}
+    </div>
+{% endblock %}
