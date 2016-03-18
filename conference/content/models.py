@@ -40,9 +40,21 @@ GALLERY_TYPES[0].columns = 5
 """
 Page.register_templates(
     {
+        'title': _('Topic Page'),
+        'path': 'page_layout_templates/Topic_page.html',
+        'regions': (
+            ('title_banner', _('Title Banner')),
+            ('featured', _('Featured')),
+            ('main_content', _('Main Content')),
+            ('parallax_box', _('Parallax Box')),
+            ('additional_content', _('Additional Content')),
+            ('sponsors', _('Sponsors')),
+        )},
+    {
         'title': _('Detail Page'),
         'path': 'page_layout_templates/detail_page.html',
         'regions': (
+            ('call_to_action', _('Parallax Box')),
             ('rich-text-left-column', _('Left Column Text Block')),
             ('medium-image-right-column', _('Right Column Image')),
             ('featured', _('Featured')),
