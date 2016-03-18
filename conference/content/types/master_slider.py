@@ -42,10 +42,10 @@ class SliderImage(models.Model):
     text_header_line_1 = models.TextField(max_length=15)
     text_header_line_2 = models.TextField(max_length=25)
     text_block = models.TextField(max_length=150)
-    button_link_1 = models.URLField()
-    button_text_1 = models.TextField(max_length=15)
-    button_link_2 = models.URLField()
-    button_text_2 = models.TextField(max_length=15)
+    button_link_1 = models.URLField(blank=True)
+    button_text_1 = models.TextField(blank=True, max_length=15)
+    button_link_2 = models.URLField(blank=True)
+    button_text_2 = models.TextField(blank=True, max_length=15)
 
     class Meta:
         verbose_name = 'Image for master slider'
