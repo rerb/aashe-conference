@@ -141,6 +141,7 @@ if USE_S3:
     from integration_settings.media.s3 import *
     AWS_QUERYSTRING_AUTH = True
     FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join(DEFAULT_S3_PATH, 'medialibrary')
+    THUMBNAIL_PREFIX = os.environ.get("THUMBNAIL_PREFIX", 'media/thumbnails/')
 else:
     MEDIA_ROOT = os.environ.get("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
     STATIC_ROOT = os.environ.get(
