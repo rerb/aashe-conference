@@ -42,7 +42,7 @@ GALLERY_TYPES[0].columns = 5
 Page.register_templates(
     {
         'title': _('Topic Page'),
-        'path': 'page_layout_templates/Topic_page.html',
+        'path': 'page_layout_templates/topic_page.html',
         'regions': (
             ('title_banner', _('Title Banner')),
             ('featured', _('Featured')),
