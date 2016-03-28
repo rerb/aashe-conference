@@ -5,7 +5,9 @@
         {% for image in images %}
         <div class="item">
             <a href="{{ image.url }}">
-                <img src="{{ image.image.file.url }}" alt="" />
+                {% thumbnail image.image.file "200x200" padding=True upscale=True as im %}
+                <img src="{{ im.url }}" alt="" />
+                {% endthumbnail %}
             </a>
         </div>
         {% endfor %}
