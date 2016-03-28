@@ -3,6 +3,9 @@
 <div class="collapse navbar-collapse navbar-responsive-collapse" style="padding-bottom:2px;">
     <div class="menu-container">
         <ul class="nav navbar-nav">
+            <li>
+                <a href="/">Home</a>
+            </li>
             {% for node in navitems %}
                 {% feincms_nav node level=2 depth=10 as subpages %}
                 <li class="dropdown">
