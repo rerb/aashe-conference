@@ -1,13 +1,11 @@
-{% load thumbnail %}
+{% load feincms_thumbnail %}
 {{ feincms_page.content.media }}
 <div class="container content-sm">
     <div class="owl-clients-v1">
         {% for image in images %}
         <div class="item">
             <a href="{{ image.url }}">
-                {% thumbnail image.image.file "200x200" padding=True upscale=True as im %}
-                <img src="{{ im.url }}" alt="" />
-                {% endthumbnail %}
+                <img src="{{ image.image.file.url }}" alt="" />
             </a>
         </div>
         {% endfor %}

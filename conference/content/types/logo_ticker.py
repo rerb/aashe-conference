@@ -29,7 +29,6 @@ class LogoCollection(models.Model):
         return u'%s' % self.name
 
 
-
 class SponsorLogo(models.Model):
     name = models.TextField(max_length=255, verbose_name="Sponsor Name")
     image = MediaFileForeignKey(MediaFile, related_name='+',
