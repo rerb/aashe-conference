@@ -3,10 +3,12 @@
 <div class="container content-sm">
     <div class="owl-clients-v1">
         {% for image in images %}
-        <div class="item">
-            <a href="{{ image.url }}">
-                <img src="{{ image.image.file.url }}" alt="" />
-            </a>
+        <div class="item" style="display:inline-block; vertical-align:middle;">
+            <div class="frame">
+                <a href="{{ image.url }}">
+                    <img src="{{ image.image.file.url }}" alt="" />
+                </a>
+            </div>
         </div>
         {% endfor %}
     </div>
