@@ -88,8 +88,7 @@
         </div>
         <!-- /Header -->
     {% endblock %}
-
-    {% cache 86400 request.path %}
+    {% cache 86400 content request.path %}
     {% block title %}{% endblock %}
 
     {% block content %}{% endblock %}
