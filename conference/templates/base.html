@@ -22,16 +22,7 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 
     {% block css %}
-        {% compress css %}
-        {% include 'aashe_theme/styles.html' %}
-        <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/fancybox/source/jquery.fancybox.css' %}">
-        <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
-        <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/masterslider.css' %}">
-        <link rel='stylesheet' href="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/skins/black-2/style.css' %}">
-        <link rel='stylesheet' href="{% static 'css/custom.css' %}">
-        <link rel="stylesheet" href="{% static 'flipclock/compiled/flipclock.css' %}">
-        <link rel="stylesheet" href="{% static 'content/gallery/classic.css' %}">
-        {% endcompress %}
+        {% include 'styles.html' %}
     {% endblock %}
 </head>
 {% endcache %}

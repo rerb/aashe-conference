@@ -1,0 +1,32 @@
+{% load static %}
+{% load compress %}
+{% compress css %}
+<!-- aashe-theme CSS -->
+
+<!-- Unify theme -->
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/bootstrap/css/bootstrap.min.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/style.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/headers/header-default.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/footers/footer-default.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/animate.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/line-icons/line-icons.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/font-awesome/css/font-awesome.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/theme-colors/default.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/pages/page_search_inner.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/pages/profile.css' %}"/>
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/fancybox/source/jquery.fancybox.css' %}">
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/masterslider.css' %}">
+<link rel='stylesheet' href="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/skins/black-2/style.css' %}">
+
+<!-- aashe-specific overrides -->
+<link rel="stylesheet" href="{% static 'aashe_theme/css/aashe_unify.css' %}"/>
+<link rel="stylesheet" type="text/css"
+      href="{% static "aashe_theme/fonts/dejavu-sans/stylesheet.css" %}"/>
+
+<link rel='stylesheet' href="{% static 'css/custom.css' %}">
+<link rel="stylesheet" href="{% static 'flipclock/compiled/flipclock.css' %}">
+<link rel="stylesheet" href="{% static 'content/gallery/classic.css' %}">
+
+<!-- end aashe-theme -->
+{% endcompress %}
