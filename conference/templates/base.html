@@ -43,21 +43,25 @@
             <div class="container">
                 <div class="header">
                     <div class="row top-nav">
-                        <div class="col-md-4 col-sm-12 aashe-tabs">
-                          <a href="http://www.aashe.org/" class="left">
-                            aashe</a>
-                          <a href="http://stars.aashe.org/" class="left">
-                            stars</a>
-                          <a href="http://conference.aashe.org/" class="left">
-                            conference</a>
-                          <a href="http://bulletin.aashe.org/" class="left">
-                            bulletin</a>
+                        <div class="col-md-5 col-sm-12 aashe-tabs">
+                            <a href="http://www.aashe.org/" class="left">
+                                aashe</a>
+                            <a href="http://bulletin.aashe.org/" class="left">
+                                bulletin</a>
+                            <a href="http://conference.aashe.org/" class="left">
+                                conference</a>
+                            <a href="http://hub.aashe.org/" class="left">
+                                hub</a>
+                            <a href="http://stars.aashe.org/" class="left">
+                                stars</a>
                         </div>
-                        <div class="col-md-5 col-sm-12">
-                            menu stuff
-                        </div>
-                        <div class="col-md-3 col-sm-12" style="vertical-align: bottom;">
+                        <div class="col-md-7 col-sm-12" style="float:right; padding-top:6px;">
                             <div class="menu">
+                                <a href="#">Register</a>
+                                <a href="#">About</a>
+                                <a href="#">Sustainability</a>
+                                <a href="#">News & Media</a>
+                                <a href="#">Contact Us</a>
                                 {% if user.is_authenticated %}
                                 <a href="http://www.aashe.org/user"><i class="fa fa-user"></i> My Account</a>
                                 <a href="{% url "logout" %}?next={{ request.path }}">
