@@ -99,7 +99,7 @@ Page.register_templates(
         'path': 'page_layout_templates/plain_text_page.html',
         'regions': (
             ('title_banner', _('Title Banner')),
-            ('content', _('Content')),
+            ('rich_text_content', _('Content')),
         )},
     {
         'title': _('Test Page'),
@@ -129,7 +129,7 @@ if os.environ.get('CMS', False):
     # Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
     Page.create_content_type(RichTextContent,
                              regions=('about', 'content', 'main_content', 'additional_content',
-                                      'rich-text-left-column', ))
+                                      'rich-text-left-column', 'rich_text_content',))
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
