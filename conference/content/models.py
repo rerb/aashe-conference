@@ -25,6 +25,7 @@ from types.medium_image import MediumImage
 from types.large_image import LargeImage
 from types.news_link_pane import NewsLinkPane
 from types.keynote import TwoColumnKeynote
+from types.title_box import TitleBox
 
 
 """
@@ -146,6 +147,7 @@ if os.environ.get('CMS', False):
                              regions=('about', 'content', 'main_content', 'additional_content', 'large_image'))
 
     Page.create_content_type(TwoColumnKeynote, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(TitleBox)
     Page.create_content_type(RawContent, regions=('flickr_gallery',))
 
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
