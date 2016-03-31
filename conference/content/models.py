@@ -88,6 +88,20 @@ Page.register_templates(
             ('sponsors', _('Sponsors')),
         )},
     {
+        'title': _('Flickr Gallery Page'),
+        'path': 'page_layout_templates/flickr_gallery.html',
+        'regions': (
+            ('title_banner', _('Title Banner')),
+            ('flickr_gallery', _('Flickr Gallery')),
+        )},
+    {
+        'title': _('Rich Text Page'),
+        'path': 'page_layout_templates/plain_text_page.html',
+        'regions': (
+            ('title_banner', _('Title Banner')),
+            ('content', _('Content')),
+        )},
+    {
         'title': _('Test Page'),
         'path': 'page_layout_templates/test_layout.html',
         'regions': (
@@ -125,6 +139,7 @@ if os.environ.get('CMS', False):
                              regions=('about', 'content', 'main_content', 'additional_content', 'large_image'))
 
     Page.create_content_type(TwoColumnKeynote, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(RawContent, regions=('flickr_gallery',))
 
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
     Page.create_content_type(NewsLinkPane, regions=('featured',))
