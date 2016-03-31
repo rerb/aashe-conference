@@ -22,9 +22,9 @@ class TwoColumnKeynote(models.Model):
     def render(self, **kwargs):
 
         if self.orientation == 'Left':
-            template = 'keynote/keynote_right.html'
-        else:
             template = 'keynote/keynote_left.html'
+        else:
+            template = 'keynote/keynote_right.html'
 
         return render_to_string(template, {
             'image': self.image,
