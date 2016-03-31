@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'aashe.aasheauth',
     'aashe_theme',
     'block_content',
+    'django_markup',
     'integration_settings.authentication',
     'integration_settings.logging',
     'integration_settings.google_analytics',
