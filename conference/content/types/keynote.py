@@ -3,6 +3,7 @@ from django.template.loader import render_to_string
 from feincms.module.medialibrary.models import MediaFile
 from feincms.module.medialibrary.fields import MediaFileForeignKey
 from feincms.content.richtext.models import RichTextField
+from django.utils.safestring import mark_safe
 
 
 class TwoColumnKeynote(models.Model):
@@ -28,5 +29,5 @@ class TwoColumnKeynote(models.Model):
 
         return render_to_string(template, {
             'image': self.image,
-            'text_block': self.text_block,
+            'text_block': mark_safe(self.text_block),
         })
