@@ -24,6 +24,7 @@ from types.featured_image_link_pane import FeaturedImageLinkPane
 from types.medium_image import MediumImage
 from types.large_image import LargeImage
 from types.news_link_pane import NewsLinkPane
+from types.keynote import TwoColumnKeynote
 
 
 """
@@ -79,6 +80,15 @@ Page.register_templates(
             ('sponsors', _('Sponsors')),
         )},
     {
+        'title': _('Two-Column Content Page'),
+        'path': 'page_layout_templates/simple_page.html',
+        'regions': (
+            ('title_banner', _('Title Banner')),
+            ('content', _('Two-Column Content')),
+            ('call_to_action', _('Call To Action Bar')),
+            ('sponsors', _('Sponsors')),
+        )},
+    {
         'title': _('Test Page'),
         'path': 'page_layout_templates/test_layout.html',
         'regions': (
@@ -114,7 +124,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(MediumImage)
     Page.create_content_type(LargeImage)
     Page.create_content_type(NewsLinkPane)
-
+    Page.create_content_type(TwoColumnKeynote)
 
 """
     Register page extension modules

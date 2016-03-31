@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load feincms_tags %}
+{% block content %}
+    <div class="wrapper">
+        {% feincms_render_region feincms_page "title_banner" request %}
+    </div>
+    <div class="wrapper">
+        {% feincms_render_region feincms_page "content" request %}
+    </div>
+    <div class="wrapper">
+        {% feincms_render_region feincms_page "call_to_action" request %}
+    </div>
+    <div class="wrapper">
+        {% feincms_render_region feincms_page "sponsors" request %}
+    </div>
+{% endblock %}
