@@ -56,7 +56,6 @@ Page.register_templates(
         'title': _('Detail Page'),
         'path': 'page_layout_templates/detail_page.html',
         'regions': (
-            ('call_to_action', _('Parallax Box')),
             ('rich-text-left-column', _('Left Column Text Block')),
             ('medium-image-right-column', _('Right Column Image')),
             ('featured', _('Featured')),
@@ -109,22 +108,26 @@ Page.register_templates(
     Register content types for page creation interface
 """
 if os.environ.get('CMS', False):
-    Page.create_content_type(MainSlider, regions='main_slider')
-    # Page.create_content_type(RawContent)
-    Page.create_content_type(GalleryContent)
-    Page.create_content_type(VideoContent)
-    Page.create_content_type(LogoTicker, regions='sponsors')
-    # Page.create_content_type(ParallaxBox)
-    Page.create_content_type(RichTextContent)
+    Page.create_content_type(MainSlider, regions=('main_slider',))
+    Page.create_content_type(GalleryContent, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(VideoContent, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(LogoTicker, regions=('sponsors',))
+    # Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
+    Page.create_content_type(RichTextContent,
+                             regions=('about', 'content', 'main_content', 'additional_content',
+                                      'rich-text-left-column', ))
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
-    Page.create_content_type(SingleImageBanner)
+    Page.create_content_type(SingleImageBanner, regions=('title_banner', 'call_to_action'))
+    Page.create_content_type(MediumImage, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(LargeImage,
+                             regions=('about', 'content', 'main_content', 'additional_content', 'large_image'))
+
+    Page.create_content_type(TwoColumnKeynote, regions=('about', 'content', 'main_content', 'additional_content',))
+
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
-    Page.create_content_type(MediumImage)
-    Page.create_content_type(LargeImage)
-    Page.create_content_type(NewsLinkPane)
-    Page.create_content_type(TwoColumnKeynote)
+    Page.create_content_type(NewsLinkPane, regions=('featured',))
 
 """
     Register page extension modules
