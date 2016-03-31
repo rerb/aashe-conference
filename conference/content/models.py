@@ -102,6 +102,13 @@ Page.register_templates(
             ('rich_text_content', _('Content')),
         )},
     {
+        'title': _('Video Gallery Page'),
+        'path': 'page_layout_templates/video_gallery.html',
+        'regions': (
+            ('title_banner', _('Title Banner')),
+            ('videos', _('Videos')),
+        )},
+    {
         'title': _('Test Page'),
         'path': 'page_layout_templates/test_layout.html',
         'regions': (
@@ -124,7 +131,7 @@ Page.register_templates(
 if os.environ.get('CMS', False):
     Page.create_content_type(MainSlider, regions=('main_slider',))
     Page.create_content_type(GalleryContent, regions=('about', 'content', 'main_content', 'additional_content',))
-    Page.create_content_type(VideoContent, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(VideoContent, regions=('about', 'content', 'main_content', 'additional_content', 'videos',))
     Page.create_content_type(LogoTicker, regions=('sponsors',))
     # Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
     Page.create_content_type(RichTextContent,
