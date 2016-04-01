@@ -9,7 +9,6 @@ from feincms.content.raw.models import RawContent
 from feincms.content.video.models import VideoContent
 from feincms.content.richtext.models import RichTextContent
 from gallery.models import GalleryContent
-from feincmsext.richtextadmin.admin import RichTextModelMixin
 
 """
     Import custom content type models

@@ -59,7 +59,6 @@ INSTALLED_APPS = (
     'integration_settings.authentication',
     'integration_settings.logging',
     'integration_settings.google_analytics',
-    'feincmsext',
 )
 
 MIDDLEWARE_CLASSES = (
