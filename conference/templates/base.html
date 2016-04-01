@@ -32,53 +32,55 @@
     {% block header %}
         <div class="wrapper">
             <!-- Header -->
-            <div class="container">
-                <div class="header">
-                    <div class="row top-nav">
-                        <div class="col-md-5 col-sm-12 aashe-tabs">
-                            <a href="http://www.aashe.org/" class="left">
-                                aashe</a>
-                            <a href="http://bulletin.aashe.org/" class="left">
-                                bulletin</a>
-                            <a href="http://conference.aashe.org/" class="left">
-                                conference</a>
-                            <a href="http://hub.aashe.org/" class="left">
-                                hub</a>
-                            <a href="http://stars.aashe.org/" class="left">
-                                stars</a>
-                        </div>
-                        <div class="col-md-7 col-sm-12" style="float:right; padding-top:6px;">
-                            <div class="menu">
-                                <a class="btn-u" href="#" style="color:#000000; padding:0;">Register</a>
-                                <a href="/sustainability/">Sustainability</a>
-                                <a href="/news-media/">News & Media</a>
-                                <a href="mailto:conference@aashe.org?subject=AASHE%20Conference%20and%20Expo%20Inquiry">Contact Us</a>
+            <div style="background-color:#f7f7f7;">
+                <div class="container" >
+                    <div class="header">
+                        <div class="row top-nav" style="background-color:#f7f7f7;">
+                            <div class="col-md-5 col-sm-12 aashe-tabs">
+                                <a href="http://www.aashe.org/" class="left">
+                                    aashe</a>
+                                <a href="http://bulletin.aashe.org/" class="left">
+                                    bulletin</a>
+                                <a href="http://conference.aashe.org/" class="left">
+                                    conference</a>
+                                <a href="http://hub.aashe.org/" class="left">
+                                    hub</a>
+                                <a href="http://stars.aashe.org/" class="left">
+                                    stars</a>
+                            </div>
+                            <div class="col-md-7 col-sm-12" style="float:right; padding-top:6px;">
+                                <div class="menu">
+                                    <a class="btn-u" href="#" style="color:#000000; padding:0;">Register</a>
+                                    <a href="/sustainability/">Sustainability</a>
+                                    <a href="/news-media/">News & Media</a>
+                                    <a href="mailto:conference@aashe.org?subject=AASHE%20Conference%20and%20Expo%20Inquiry">Contact Us</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="fa fa-bars"></span>
-                        </button>
-                        <div class="col-md-2" style="float: left">
-                            <a href="{{ home.get_absolute_url }}" class="logo">
-                                <img src="{% static 'img/aashe10_logo.png' %}" alt="AASHE logo" title="" />
-                            </a>
+                        <div class="row" style="background-color:#f7f7f7;">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="fa fa-bars"></span>
+                            </button>
+                            <div class="col-md-2" style="float: left">
+                                <a href="{{ home.get_absolute_url }}" class="logo">
+                                    <img src="{% static 'img/aashe10_logo.png' %}" alt="AASHE logo" title="" />
+                                </a>
+                            </div>
+                            <div class="col-md-7" style="float:left;">
+                                {% feincms_render_region feincms_page "header_block" request %}
+                            </div>
+                            <div class="col-md-3" style="float:right; padding-top:30px;">
+                                <div class="clock" style="float:left; zoom: 0.4; font-size: 20pt;"></div>
+                            </div>
                         </div>
-                        <div class="col-md-7" style="float:left;">
-                            {% feincms_render_region feincms_page "header_block" request %}
+                        <div class="row" style="background-color:#f7f7f7;">
+                            <div class="col-md-12">
+                                {% include 'navigation_menu.html' %}
+                            </div>
                         </div>
-                        <div class="col-md-3" style="float:right; padding-top:30px;">
-                            <div class="clock" style="float:left; zoom: 0.4; font-size: 20pt;"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            {% include 'navigation_menu.html' %}
-                        </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
