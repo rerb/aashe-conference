@@ -9,6 +9,7 @@ from feincms.content.raw.models import RawContent
 from feincms.content.video.models import VideoContent
 from feincms.content.richtext.models import RichTextContent
 from gallery.models import GalleryContent
+from feincmsext.richtextadmin.admin import RichTextModelMixin
 
 """
     Import custom content type models
@@ -26,6 +27,7 @@ from types.large_image import LargeImage
 from types.news_link_pane import NewsLinkPane
 from types.keynote import TwoColumnKeynote
 from types.title_box import TitleBox
+from types.header_box import HeaderBox
 
 
 """
@@ -46,6 +48,7 @@ Page.register_templates(
         'title': _('Topic Page'),
         'path': 'page_layout_templates/topic_page.html',
         'regions': (
+            ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
             ('featured', _('Featured')),
             ('main_content', _('Main Content')),
@@ -57,6 +60,7 @@ Page.register_templates(
         'title': _('Detail Page'),
         'path': 'page_layout_templates/detail_page.html',
         'regions': (
+            ('header_block', _('Header Block')),
             ('rich-text-left-column', _('Left Column Text Block')),
             ('medium-image-right-column', _('Right Column Image')),
             ('featured', _('Featured')),
@@ -69,6 +73,7 @@ Page.register_templates(
         'title': _('Home Page'),
         'path': 'page_layout_templates/home_page.html',
         'regions': (
+            ('header_block', _('Header Block')),
             ('main_slider', _('Main Slider')),
             ('call_to_action', _('Call To Action Bar')),
             ('rich-text-left-column', _('Left Column Text Block')),
@@ -83,6 +88,7 @@ Page.register_templates(
         'title': _('Two-Column Content Page'),
         'path': 'page_layout_templates/simple_page.html',
         'regions': (
+            ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
             ('content', _('Two-Column Content')),
             ('call_to_action', _('Call To Action Bar')),
@@ -92,35 +98,27 @@ Page.register_templates(
         'title': _('Flickr Gallery Page'),
         'path': 'page_layout_templates/flickr_gallery.html',
         'regions': (
+            ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
             ('flickr_gallery', _('Flickr Gallery')),
+            ('sponsors', _('Sponsors')),
         )},
     {
         'title': _('Rich Text Page'),
         'path': 'page_layout_templates/plain_text_page.html',
         'regions': (
+            ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
             ('rich_text_content', _('Content')),
+            ('sponsors', _('Sponsors')),
         )},
     {
         'title': _('Video Gallery Page'),
         'path': 'page_layout_templates/video_gallery.html',
         'regions': (
+            ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
             ('videos', _('Videos')),
-        )},
-    {
-        'title': _('Test Page'),
-        'path': 'page_layout_templates/test_layout.html',
-        'regions': (
-            ('main_slider', _('Main Slider')),
-            ('call_to_action', _('Call To Action Bar')),
-            ('large_image', _('Large Image')),
-            ('featured', _('Featured')),
-            ('rich-text-left-column', _('Left Column Text Block')),
-            ('medium-image-right-column', _('Right Column Image')),
-            ('about', _('About')),
-            ('parallax', _('Parallax Box')),
             ('sponsors', _('Sponsors')),
         )},
 )
@@ -154,6 +152,8 @@ if os.environ.get('CMS', False):
 
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
     Page.create_content_type(NewsLinkPane, regions=('featured',))
+
+    # Page.create_content_type(HeaderBox, regions=('header_block',))
 
 """
     Register page extension modules

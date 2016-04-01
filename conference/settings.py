@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'integration_settings.authentication',
     'integration_settings.logging',
     'integration_settings.google_analytics',
+    'feincmsext',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -163,6 +164,8 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
+
+from feincms.default_settings import *
 FEINCMS_RICHTEXT_INIT_TEMPLATE = 'init_tinymce.html'
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)

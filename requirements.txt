@@ -22,3 +22,4 @@ https://github.com/AASHE/aashe-auth/archive/master.zip
 https://github.com/AASHE/django-block-content/archive/master.zip
 https://github.com/AASHE/django-integration-settings/archive/master.zip
 https://github.com/feinheit/feincms_gallery/archive/master.zip
+https://github.com/bmihelac/feincms-feincmsext/archive/master.zip
