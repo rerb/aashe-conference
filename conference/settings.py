@@ -165,7 +165,6 @@ STATICFILES_FINDERS = (
 )
 
 
-from feincms.default_settings import *
 FEINCMS_RICHTEXT_INIT_TEMPLATE = 'init_tinymce.html'
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
