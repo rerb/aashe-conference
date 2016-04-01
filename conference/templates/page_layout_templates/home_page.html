@@ -10,6 +10,12 @@
         {% feincms_render_region feincms_page "call_to_action" request %}
     </div>
     <div class="container">
+        {# Featured #}
+        <div class="wrapper" style="padding-top:20px;">
+            <div class="row featured-blog">
+                {% feincms_render_region feincms_page "featured" request %}
+            </div>
+        </div>
         {# Two-column text and image#}
         <div class="container">
             <div class="col-md-6" style="float:left;">
@@ -28,12 +34,6 @@
         {# Parallax Box 2 #}
         <div class="wrapper" style="padding-top:20px;">
             {% feincms_render_region feincms_page "parallax_box_2" request %}
-        </div>
-        {# Featured #}
-        <div class="wrapper" style="padding-top:20px;">
-            <div class="row featured-blog">
-                {% feincms_render_region feincms_page "featured" request %}
-            </div>
         </div>
     </div>
     {# Sponsor Ticker #}

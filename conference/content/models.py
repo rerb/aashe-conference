@@ -142,7 +142,9 @@ if os.environ.get('CMS', False):
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
     Page.create_content_type(SingleImageBanner, regions=('title_banner', 'call_to_action'))
-    Page.create_content_type(MediumImage, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(MediumImage,
+                             regions=('about', 'content', 'main_content', 'additional_content',
+                                      'medium-image-right-column',))
     Page.create_content_type(LargeImage,
                              regions=('about', 'content', 'main_content', 'additional_content', 'large_image'))
 
