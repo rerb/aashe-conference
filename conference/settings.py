@@ -163,6 +163,8 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
+FEINCMS_RICHTEXT_INIT_TEMPLATE = 'init_tinymce.html'
+
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 SITE_ID = 1
