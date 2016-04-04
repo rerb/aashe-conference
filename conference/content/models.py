@@ -152,7 +152,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
     Page.create_content_type(NewsLinkPane, regions=('featured',))
 
-    #Page.create_content_type(HeaderBox, regions=('header_block',))
+    Page.create_content_type(HeaderBox, regions=('header_block',))
 
 """
     Register page extension modules
