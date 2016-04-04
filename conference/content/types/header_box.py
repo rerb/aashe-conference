@@ -13,13 +13,17 @@ class HeaderBox(models.Model):
 
     def render(self, **kwargs):
         return render_to_string('header_box/header_box.html', {
-            'textbox': mark_safe(self.header_box.content),
+            'header_box_title': self.header_box.title,
+            'header_box_line_1': self.header_box.text_line_1,
+            'header_box_line_2': self.header_box.text_line_2,
         })
 
 
 class HeaderBoxContent(models.Model):
     name = models.TextField(max_length=25)
-    content = RichTextField()
+    title = models.TextField(max_length=128)
+    text_line_1 = models.TextField(max_length=128)
+    text_line_2 = models.TextField(max_length=128)
 
     class Meta:
         verbose_name = "Header Box Content"
