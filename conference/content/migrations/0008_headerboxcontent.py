@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import feincms.contrib.richtext
 
 
 class Migration(migrations.Migration):
@@ -17,7 +16,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.TextField(max_length=25)),
-                ('content', feincms.contrib.richtext.RichTextField()),
+                ('title', models.TextField(max_length=128)),
+                ('text_line_1', models.TextField(max_length=128)),
+                ('text_line_2', models.TextField(max_length=128)),
             ],
             options={
                 'verbose_name': 'Header Box Content',
