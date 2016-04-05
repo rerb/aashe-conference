@@ -122,6 +122,16 @@ Page.register_templates(
             ('videos', _('Videos')),
             ('sponsors', _('Sponsors')),
         )},
+    {
+        'title': _('Pricing Table Page'),
+        'path': 'page_layout_templates/pricing_page.html',
+        'regions': (
+            ('header_block', _('Header Block')),
+            ('title_banner', _('Title Banner')),
+            ('rich_text_1', _('Rich Text Content 1')),
+            ('pricing_table', _('Pricing Table')),
+            ('rich_text_2', _('Rich Text Content 2')),
+        )},
 )
 
 
@@ -136,7 +146,7 @@ if os.environ.get('CMS', False):
     # Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
     Page.create_content_type(RichTextContent,
                              regions=('about', 'content', 'main_content', 'additional_content',
-                                      'rich-text-left-column', 'rich_text_content',))
+                                      'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
@@ -155,7 +165,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(NewsLinkPane, regions=('featured',))
 
     Page.create_content_type(HeaderBox, regions=('header_block',))
-    # Page.create_content_type(PricingTable, regions=('pricing_table', 'about'))
+    Page.create_content_type(PricingTable, regions=('pricing_table',))
 
 """
     Register page extension modules
