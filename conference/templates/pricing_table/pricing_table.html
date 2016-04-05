@@ -1,0 +1,49 @@
+    <div class="row no-space-pricing pricing-mega-v1">
+        <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+            <div class="pricing hidden-area">
+                <div class="pricing-head ">
+                    <h4 class="price">{{ price_row_header }}</h4>
+                </div>
+                <ul class="pricing-content list-unstyled">
+                    {% for benefit in benefit_set %}
+                        <li class="bg-color">
+                            {{ benefit.name }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% for level in level_list %}
+            <div class="col-md-2 col-sm-6 block">
+                <div class="pricing">
+                    <div class="pricing-head">
+                        <h3>
+                            {{ level.level_object.level_name }}
+                        </h3>
+                        <h4 class="price">
+                            <i>$</i>{{ level.price_int }}<i>{{ level.price_decimal }}</i>
+                        </h4>
+                    </div>
+                    <ul class="pricing-content list-unstyled ">
+                        {% for benefit in level.benefits_list %}
+                            <li class="bg-color">
+                                {% if benefit == True %}
+                                    <i class="fa fa-check"></i>
+                                {% else %}
+                                    <i class="fa fa-times"></i>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="btn-group btn-group-justified">
+                        <button type="button" class="btn-u btn-block">
+                            <i class="fa fa-shopping-cart"></i>
+                            Register
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
