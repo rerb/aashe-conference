@@ -71,3 +71,11 @@
     right: 0;
     margin: auto;
 }
+
+.panel-green {
+  border-color: #6BBC49;
+}
+
+.panel-green > .panel-heading {
+  background: #6BBC49;
+}
