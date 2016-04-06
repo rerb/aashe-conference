@@ -1,11 +1,22 @@
+{% load static %}
+<script src="{% static 'aashe_theme/unify/plugins/jquery/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({trigger:"hover"});
+});
+</script>
 <div class="row no-space-pricing pricing-mega-v1">
     <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
         <div class="pricing hidden-area">
             <ul class="pricing-content list-unstyled">
                 {% for level in registration_levels %}
+                    <a href="#" data-toggle="popover" trigger="hover" data-content="{{ level.level_details }}" data-placement="bottom">
                     <li class="bg-color">
-                        {{ level.level_name }} - {{ level.level_details }}
-                    </li>
+
+                            {{ level.level_name }}
+
+                    </li></a>
                 {% endfor %}
             </ul>
         </div>
