@@ -4,7 +4,9 @@
         <div class="service-block-desc">
             <h3>{{ title }}</h3>
             <p>{{ text_block }}</p>
-            <p><a href="{{ button_url }}" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">{{ button_text }}</a></p>
+            {% if button_url %}
+                <p><a href="{{ button_url }}" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">{{ button_text }}</a></p>
+            {% endif %}
         </div>
     </div>
 </div>
