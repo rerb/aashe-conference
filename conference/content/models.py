@@ -132,6 +132,7 @@ Page.register_templates(
             ('rich_text_1', _('Rich Text Content 1')),
             ('pricing_table', _('Pricing Table')),
             ('rich_text_2', _('Rich Text Content 2')),
+            ('sponsors', _('Sponsors')),
         )},
 )
 
