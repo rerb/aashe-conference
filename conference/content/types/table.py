@@ -14,7 +14,7 @@ class TableContent(models.Model):
         verbose_name = "Rich Text Table Block"
 
     def render(self, **kwargs):
-        fixed_table = self.table.replace('<table ', '<table class="table" ')
+        fixed_table = self.table.replace('<table', '<table class="table" ')
 
         return render_to_string('table/table.html', {
             'title': self.title,
