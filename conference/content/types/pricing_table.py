@@ -3,7 +3,6 @@ from django.template.loader import render_to_string
 
 
 class PricingTable(models.Model):
-    price_row_header = models.TextField(max_length=64, verbose_name="Price Row Header")
     registration_levels = models.ManyToManyField('RegistrationLevel', verbose_name="Registration Levels")
     deadlines = models.ManyToManyField('Deadline', verbose_name="Deadlines")
 
@@ -35,7 +34,6 @@ class PricingTable(models.Model):
             columns.append(column)
 
         return render_to_string('pricing_table/pricing_table.html', {
-            'price_row_header': self.price_row_header,
             'registration_levels': registration_levels,
             'deadlines': deadlines,
             'columns': columns,
@@ -44,7 +42,7 @@ class PricingTable(models.Model):
 
 class RegistrationLevel(models.Model):
     level_name = models.TextField(max_length=128, verbose_name="Name")
-    level_details = models.TextField(max_length=256, verbose_name="Details", blank=True)
+    level_details = models.TextField(max_length=512, verbose_name="Details", blank=True)
     first_deadline_price = models.IntegerField(verbose_name="First Deadline Price")
     second_deadline_price = models.IntegerField(verbose_name="Second Deadline Price")
     third_deadline_price = models.IntegerField(verbose_name="Third Deadline Price")
