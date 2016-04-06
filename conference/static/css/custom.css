@@ -89,3 +89,7 @@
 li a {
   color: #6BBC49;
 }
+
+.header .navbar-nav > li > a:hover {
+		color: #6BBC49;
+	}
