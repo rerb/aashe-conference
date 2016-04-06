@@ -27,7 +27,7 @@ from types.news_link_pane import NewsLinkPane
 from types.keynote import TwoColumnKeynote
 from types.title_box import TitleBox
 from types.header_box import HeaderBox
-from types.pricing_table import PricingTable
+# from types.pricing_table import PricingTable
 from types.featured_pane import FeaturedPane
 from types.table import TableContent
 
