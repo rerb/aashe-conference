@@ -23,17 +23,19 @@
             </div>
             {% feincms_render_region feincms_page "medium-image-right-column" request %}
         </div>
-        {# Parallax Box 1 #}
-        <div class="wrapper" style="padding-top:20px;">
-            {% feincms_render_region feincms_page "parallax_box_1" request %}
-        </div>
+    </div>
+    {# Parallax Box 1 #}
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "parallax_box_1" request %}
+    </div>
+    <div class="container">
         {# About #}
         <div class="container" style="padding-top:20px;">
             {% feincms_render_region feincms_page "about" request %}
         </div>
-        {# Parallax Box 2 #}
-        <div class="wrapper" style="padding-top:20px;">
-            {% feincms_render_region feincms_page "parallax_box_2" request %}
-        </div>
+    </div>
+    {# Parallax Box 2 #}
+    <div class="wrapper" style="padding-top:20px;">
+        {% feincms_render_region feincms_page "parallax_box_2" request %}
     </div>
 {% endblock %}
