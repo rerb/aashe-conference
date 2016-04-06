@@ -28,7 +28,7 @@ from types.keynote import TwoColumnKeynote
 from types.title_box import TitleBox
 from types.header_box import HeaderBox
 from types.pricing_table import PricingTable
-from django.template.defaulttags import register
+from types.featured_pane import FeaturedPane
 
 
 """
@@ -166,6 +166,8 @@ if os.environ.get('CMS', False):
 
     Page.create_content_type(HeaderBox, regions=('header_block',))
     Page.create_content_type(PricingTable, regions=('pricing_table',))
+    Page.create_content_type(FeaturedPane, regions=('about', 'featured', 'content', 'additional_content',
+                                                    'main_content',))
 
 """
     Register page extension modules
