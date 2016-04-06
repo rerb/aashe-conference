@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('content', '0011_auto_20160406_1902'),
+        ('content', '0008_headerboxcontent'),
     ]
 
     operations = [
