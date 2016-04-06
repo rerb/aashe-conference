@@ -169,7 +169,9 @@ if os.environ.get('CMS', False):
     Page.create_content_type(PricingTable, regions=('pricing_table',))
     Page.create_content_type(FeaturedPane, regions=('about', 'featured', 'content', 'additional_content',
                                                     'main_content',))
-    Page.create_content_type(TableContent, regions=('about',))
+    Page.create_content_type(TableContent,
+                             regions=('about', 'content', 'main_content', 'additional_content',
+                                      'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
 
 """
     Register page extension modules
