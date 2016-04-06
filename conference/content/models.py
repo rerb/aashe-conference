@@ -52,6 +52,7 @@ Page.register_templates(
         'regions': (
             ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
+            ('rich_text_content', _('Rich Text Content')),
             ('featured', _('Featured')),
             ('main_content', _('Main Content')),
             ('parallax_box', _('Parallax Box')),

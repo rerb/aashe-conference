@@ -5,6 +5,9 @@
         {% feincms_render_region feincms_page "title_banner" request %}
     </div>
     <div class="container">
+        <div class="wrapper">
+            {% feincms_render_region feincms_page "rich_text_content" request %}
+        </div>
         <div class="wrapper" style="padding-top:20px;">
             <div class="row featured-blog">
                 {% feincms_render_region feincms_page "featured" request %}
