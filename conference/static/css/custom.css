@@ -42,12 +42,6 @@
   background-color: #3f7f7f;
 }
 
-.banner-image {
-  position: static;
-  width: 100%;
-  height: 20%;
-}
-
 .gallery-content {
   position: relative;
   left: 5%;
