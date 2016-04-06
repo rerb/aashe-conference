@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 class TableContent(models.Model):
     title = models.TextField(max_length=128, verbose_name="Title")
-    text_block = RichTextField(verbose_name="Table header text block")
+    text_block = RichTextField(verbose_name="Table header text block", blank=True)
     table = RichTextField(verbose_name="Table")
 
     class Meta:
