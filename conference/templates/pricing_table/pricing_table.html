@@ -11,7 +11,7 @@ $(document).ready(function(){
         <div class="pricing hidden-area">
             <ul class="pricing-content list-unstyled">
                 {% for level in registration_levels %}
-                    <a href="#" data-toggle="popover" trigger="hover" data-content="{{ level.level_details }}" data-placement="bottom">
+                    <a href="#" data-toggle="popover" data-content="{{ level.level_details }}" data-placement="bottom">
                     <li class="bg-color">
 
                             {{ level.level_name }}
