@@ -16,7 +16,7 @@ from gallery.models import GalleryContent
 from gallery import specs
 from types.master_slider import MainSlider, SliderImage
 from types.logo_ticker import LogoTicker, SponsorLogo
-# from types.parallax_box import ParallaxBox
+from types.parallax_box import ParallaxBox
 from types.call_to_action import CallToAction
 from types.buttons import SingleButton, DoubleButton
 from types.single_image_banner import SingleImageBanner
@@ -144,7 +144,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(GalleryContent, regions=('about', 'content', 'main_content', 'additional_content',))
     Page.create_content_type(VideoContent, regions=('about', 'content', 'main_content', 'additional_content', 'videos',))
     Page.create_content_type(LogoTicker, regions=('sponsors',))
-    # Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
+    Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
     Page.create_content_type(RichTextContent,
                              regions=('about', 'content', 'main_content', 'additional_content',
                                       'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
