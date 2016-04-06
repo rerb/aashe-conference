@@ -79,3 +79,11 @@
 .panel-green > .panel-heading {
   background: #6BBC49;
 }
+
+.pricing-head h3 {
+  padding: 28px 0;
+}
+
+.pricing-mega-v1 .pricing-head h3 {
+  font-size: 16px;
+}

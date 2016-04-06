@@ -1,39 +1,29 @@
 <div class="row no-space-pricing pricing-mega-v1">
     <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
         <div class="pricing hidden-area">
-            <div class="pricing-head ">
-                <h4 class="price">{{ price_row_header }}</h4>
-            </div>
             <ul class="pricing-content list-unstyled">
-                {% for benefit in benefit_set %}
+                {% for level in registration_levels %}
                     <li class="bg-color">
-                        {{ benefit.name }}
+                        {{ level.level_name }} - {{ level.level_details }}
                     </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
-    {% for level in level_list %}
+    {% for column in columns %}
         <div class="col-md-2 col-sm-6 block">
             <div class="pricing">
-                <div class="pricing-head">
+                <div class="pricing-head" style="height: 75px;">
                     <h3>
-                        {{ level.level_object.level_name }}
+                        {{ column.deadline }}
                     </h3>
-                    <h4 class="price">
-                        <i>$</i>{{ level.price_int }}<i>{{ level.price_decimal }}</i>
-                    </h4>
                 </div>
                 <ul class="pricing-content list-unstyled ">
-                    {% for benefit in level.benefits_list %}
-                        <li class="bg-color">
-                            {% if benefit == True %}
-                                <i class="fa fa-check"></i>
-                            {% else %}
-                                <i class="fa fa-times" style="color: red;"></i>
-                            {% endif %}
-                        </li>
-                    {% endfor %}
+                        {% for price in column.prices %}
+                            <li class="bg-color">
+                                ${{ price }}
+                            </li>
+                        {% endfor %}
                 </ul>
                 <div class="btn-group btn-group-justified">
                     <button type="button" class="btn-u btn-block">
