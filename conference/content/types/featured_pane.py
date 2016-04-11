@@ -26,5 +26,4 @@ class FeaturedPane(models.Model):
             'title': self.title,
             'text_block': self.text_block,
             'button_url': self.button_url,
-            'button_text': self.button_text,
         })

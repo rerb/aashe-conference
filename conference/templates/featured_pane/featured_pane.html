@@ -2,11 +2,12 @@
     <div class="service-block-v8">
         <i class="{{ icon }}"></i>
         <div class="service-block-desc">
-            <h3>{{ title }}</h3>
-            <p>{{ text_block }}</p>
             {% if button_url %}
-                <p><a href="{{ button_url }}" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">{{ button_text }}</a></p>
+                <a href="{{ button_url }}"><h3 style="color: #6BBC49;">{{ title }}</h3></a>
+            {% else %}
+                <h3>{{ title }}</h3>
             {% endif %}
+            <p>{{ text_block }}</p>
         </div>
     </div>
 </div>

@@ -54,6 +54,8 @@ Page.register_templates(
             ('title_banner', _('Title Banner')),
             ('rich_text_content', _('Rich Text Content')),
             ('featured', _('Featured')),
+            ('icon-featured-panes-row-1', _('Icon Featured Panes Row 1')),
+            ('icon-featured-panes-row-2', _('Icon Featured Panes Row 2')),
             ('main_content', _('Main Content')),
             ('parallax_box', _('Parallax Box')),
             ('additional_content', _('Additional Content')),
@@ -170,7 +172,8 @@ if os.environ.get('CMS', False):
     Page.create_content_type(HeaderBox, regions=('header_block',))
     Page.create_content_type(PricingTable, regions=('pricing_table',))
     Page.create_content_type(FeaturedPane, regions=('about', 'featured', 'content', 'additional_content',
-                                                    'main_content',))
+                                                    'main_content', 'icon-featured-panes',
+                                                    'icon-featured-panes-row-2'))
     Page.create_content_type(TableContent,
                              regions=('about', 'content', 'main_content', 'additional_content',
                                       'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
