@@ -164,7 +164,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
-    'pipeline.finders.PipelineFinder',
 )
 
 FEINCMS_RICHTEXT_INIT_TEMPLATE = 'init_tinymce.html'
@@ -213,4 +212,4 @@ USE_L10N = True
 
 USE_TZ = True
 
-HTML_MINIFY = True
+HTML_MINIFY = os.environ.get('HTML_MINIFY', False)
