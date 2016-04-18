@@ -1,4 +1,6 @@
 {% load static %}
+{% load compress %}
+{% compress js %}
 <script src="{% static 'aashe_theme/unify/plugins/jquery/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
 <script type="text/javascript">
@@ -6,6 +8,7 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover({trigger:"hover"});
 });
 </script>
+{% endcompress %}
 <div class="row no-space-pricing pricing-mega-v1">
     <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
         <div class="pricing hidden-area">

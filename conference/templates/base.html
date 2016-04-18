@@ -21,7 +21,6 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
-
     {% block css %}
         {% include 'styles.html' %}
     {% endblock %}
@@ -101,43 +100,7 @@
 
 {% cache 86400 javascript %}
 {% block javascript %}
-    {% compress js %}
-    {% include 'aashe_theme/javascript.html' %}
-    <!-- JS Implementing Plugins -->
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/jquery.parallax.js' %}"></script>
-    <script src="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/masterslider.min.js' %}"></script>
-    <script src="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/jquery.easing.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/counter/waypoints.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/counter/jquery.counterup.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/fancybox/source/jquery.fancybox.pack.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/plugins/owl-carousel/owl-carousel/owl.carousel.js' %}"></script>
-    <!-- JS Page Level -->
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/js/app.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/js/plugins/fancy-box.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/js/plugins/owl-carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aashe_theme/unify/js/plugins/master-slider-fw.js' %}"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            App.init();
-            App.initCounter();
-            App.initParallaxBg();
-            FancyBox.initFancybox();
-            MSfullWidth.initMSfullWidth();
-            OwlCarousel.initOwlCarousel();
-        });
-    </script>
-    <script src="{% static 'flipclock/compiled/flipclock.min.js' %}"></script>
-    <script src="{% static 'content/gallery/gallery.js' %}"></script>
-
-    <!--Custom JS -->
-    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
-
-    <!--[if lt IE 9]>
-        <script src="{% static 'aashe_theme/unify/plugins/respond.js' %}"></script>
-        <script src="{% static 'aashe_theme/unify/plugins/html5shiv.js' %}"></script>
-        <script src="{% static 'aashe_theme/unify/plugins/placeholder-IE-fixes.js' %}"></script>
-    <![endif]-->
-{% endcompress %}
+    {% include 'javascript.html' %}
 {% endblock %}
 {% endcache %}
 

@@ -1,19 +1,10 @@
 {% load static %}
 {% load compress %}
-{% compress css %}
-<!-- aashe-theme CSS -->
 
+<!-- aashe-theme CSS -->
+{% include 'aashe_theme/styles_compressed.html' %}
 <!-- Unify theme -->
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/bootstrap/css/bootstrap.min.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/style.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/headers/header-default.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/footers/footer-default.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/animate.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/line-icons/line-icons.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/font-awesome/css/font-awesome.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/theme-colors/default.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/pages/page_search_inner.css' %}"/>
-<link rel="stylesheet" href="{% static 'aashe_theme/unify/css/pages/profile.css' %}"/>
+{% compress css %}
 <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/fancybox/source/jquery.fancybox.css' %}">
 <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
 <link rel="stylesheet" href="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/masterslider.css' %}">
