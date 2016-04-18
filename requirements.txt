@@ -8,6 +8,7 @@ dj-database-url
 dj-static
 django-compressor==1.5
 django-heroku-memcacheify
+django-htmlmin
 feincms>=1.11
 gunicorn
 psycopg2
