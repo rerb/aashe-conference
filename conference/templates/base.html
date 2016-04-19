@@ -62,7 +62,7 @@
                             </button>
                             <div class="col-md-2" style="float: left">
                                 <a href="/" class="logo">
-                                    <img src="{% static 'img/AASHE_ConferenceLogo.png' %}" alt="AASHE logo" title="" style="width:100%;" />
+                                    <img src="{% static 'img/AASHE_ConferenceLogo.png' %}" alt="AASHE logo" title="" style="width:165px;" />
                                 </a>
                             </div>
                             <div class="col-md-7" style="float:left;">
@@ -101,6 +101,14 @@
 {% cache 86400 javascript %}
 {% block javascript %}
     {% include 'javascript.html' %}
+    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}
 {% endcache %}
 

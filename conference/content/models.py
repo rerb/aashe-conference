@@ -137,6 +137,16 @@ Page.register_templates(
             ('rich_text_2', _('Rich Text Content 2')),
             ('sponsors', _('Sponsors')),
         )},
+    {
+        'title': _('Social Media Page'),
+        'path': 'page_layout_templates/social_media.html',
+        'regions': (
+            ('header_block', _('Header Block')),
+            ('facebook', _('Facebook')),
+            ('instagram', _('Instagram')),
+            ('twitter', _('Twitter')),
+            ('sponsors', _('Sponsors')),
+        )},
 )
 
 
@@ -164,7 +174,7 @@ if os.environ.get('CMS', False):
 
     Page.create_content_type(TwoColumnKeynote, regions=('about', 'content', 'main_content', 'additional_content',))
     Page.create_content_type(TitleBox)
-    Page.create_content_type(RawContent, regions=('flickr_gallery',))
+    Page.create_content_type(RawContent, regions=('flickr_gallery', 'facebook', 'twitter', 'instagram',))
 
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
     Page.create_content_type(NewsLinkPane, regions=('featured',))
