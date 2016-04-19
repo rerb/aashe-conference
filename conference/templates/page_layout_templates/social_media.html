@@ -5,14 +5,18 @@
         <h1 class="pull-left">{{ feincms_page.title }}</h1>
     </div>
     <div class="container">
-        <div class="col-md-4 facebook" style="padding-right: 15px;">
-            {% feincms_render_region feincms_page "facebook" request %}
+        <div class="row">
+            <div class="col-md-6 facebook" style="padding-right: 15px;">
+                {% feincms_render_region feincms_page "facebook" request %}
+            </div>
+            <div class="col-md-6 twitter" style="padding-right: 15px;">
+                {% feincms_render_region feincms_page "twitter" request %}
+            </div>
         </div>
-        <div class="col-md-4 instagram">
-            {% feincms_render_region feincms_page "instagram" request %}
-        </div>
-        <div class="col-md-4 twitter" style="padding-right: 15px;">
-            {% feincms_render_region feincms_page "twitter" request %}
+        <div class="row">
+            <div class="col-md-12 instagram" style="padding-top: 20px;">
+                {% feincms_render_region feincms_page "instagram" request %}
+            </div>
         </div>
     </div>
 {% endblock %}

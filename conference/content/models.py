@@ -143,8 +143,8 @@ Page.register_templates(
         'regions': (
             ('header_block', _('Header Block')),
             ('facebook', _('Facebook')),
-            ('instagram', _('Instagram')),
             ('twitter', _('Twitter')),
+            ('instagram', _('Instagram')),
             ('sponsors', _('Sponsors')),
         )},
 )
