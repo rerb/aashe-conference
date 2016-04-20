@@ -1,6 +1,7 @@
 {% load static from staticfiles %}
 {% load feincms_tags %}
 {% load block_content %}
+{% load add_analytics %}
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -103,5 +104,7 @@
     {% include 'javascript.html' %}
 {% endblock %}
 {% endcache %}
-
+{% block analytics %}
+    {% add_analytics %}
+{% endblock %}
 </html>
