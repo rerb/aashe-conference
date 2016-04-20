@@ -56,6 +56,11 @@ Page.register_templates(
             ('featured', _('Featured')),
             ('icon-featured-panes-row-1', _('Icon Featured Panes Row 1')),
             ('icon-featured-panes-row-2', _('Icon Featured Panes Row 2')),
+            ('icon-featured-panes-row-2', _('Icon Featured Panes Row 3')),
+            ('icon-featured-panes-row-2', _('Icon Featured Panes Row 4')),
+            ('icon-featured-panes-row-2', _('Icon Featured Panes Row 5')),
+            ('icon-featured-panes-row-2', _('Icon Featured Panes Row 6')),
+            ('icon-featured-panes-row-2', _('Icon Featured Panes Row 7')),
             ('main_content', _('Main Content')),
             ('parallax_box', _('Parallax Box')),
             ('additional_content', _('Additional Content')),
@@ -183,7 +188,10 @@ if os.environ.get('CMS', False):
     Page.create_content_type(PricingTable, regions=('pricing_table',))
     Page.create_content_type(FeaturedPane, regions=('about', 'featured', 'content', 'additional_content',
                                                     'main_content', 'icon-featured-panes',
-                                                    'icon-featured-panes-row-2', 'icon-featured-panes-row-1'))
+                                                    'icon-featured-panes-row-1', 'icon-featured-panes-row-2',
+                                                    'icon-featured-panes-row-3', 'icon-featured-panes-row-4',
+                                                    'icon-featured-panes-row-5', 'icon-featured-panes-row-6',
+                                                    'icon-featured-panes-row-7',))
     Page.create_content_type(TableContent,
                              regions=('about', 'content', 'main_content', 'additional_content',
                                       'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
