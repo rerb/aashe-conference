@@ -18,3 +18,7 @@ var clock = $('.clock').FlipClock(
     countdown: true,
     showSeconds: false
 });
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({trigger:"hover"});
+});
