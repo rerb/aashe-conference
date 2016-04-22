@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'gallery',
     'compressor',
+    'tinymce_browser',
 
     'conference',
     'conference.content',

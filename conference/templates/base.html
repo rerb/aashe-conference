@@ -12,7 +12,7 @@
 
 {% cache 86400 head %}
 <head>
-    <title>AASHE Conference & Expo</title>
+    <title>{% block head_title %}AASHE Conference &amp; Expo{% endblock %}</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -51,7 +51,7 @@
                             <div class="col-md-7 col-sm-12" style="float:right; padding-top:6px;">
                                 <div class="menu">
                                     <a class="btn-u" href="#" style="color:#000000; padding:0;">Register</a>
-                                    <a href="/news-media/">News & Media</a>
+                                    <a href="/news-media/">News &amp; Media</a>
                                     <a href="mailto:conference@aashe.org?subject=AASHE%20Conference%20and%20Expo%20Inquiry">Contact Us</a>
                                 </div>
                             </div>
@@ -102,6 +102,7 @@
 {% cache 86400 javascript %}
 {% block javascript %}
     {% include 'javascript.html' %}
+    <script type="text/javascript" src="{% static 'tinymce_browser/callback.js' %}"></script>
 {% endblock %}
 {% endcache %}
 {% block analytics %}
