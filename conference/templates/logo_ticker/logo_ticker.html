@@ -1,4 +1,4 @@
-{% load feincms_thumbnail %}
+{% load thumbnail %}
 {{ feincms_page.content.media }}
 <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
     <div class="owl-clients-v1">
@@ -6,7 +6,9 @@
         <div class="item" style="display:inline-block; vertical-align:middle;">
             <div class="frame">
                 <a href="{{ image.url }}">
-                    <img src="{{ image.image.file.url }}" alt="" />
+                    {% thumbnail image.image.file.url "120x120" as im %}
+                        <img src="{{ im.url }}" alt="" />
+                    {% endthumbnail %}
                 </a>
             </div>
         </div>

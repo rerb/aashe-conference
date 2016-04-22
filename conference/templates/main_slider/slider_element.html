@@ -1,7 +1,9 @@
 {% load static %}
+{% load thumbnail %}
 {{ feincms_page.content.media }}
 <div class="ms-slide" style="vertical-align: middle;">
-<img src="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/blank.gif' %}" data-src="{{ image.file.url }}" alt="">
+{% thumbnail image.file.url "1600x900" as im %}
+<img src="{% static 'aashe_theme/unify/plugins/master-slider/masterslider/style/blank.gif' %}" data-src="{{ im.url }}" alt="">
     <div class="ms-layer ms-promo-info ms-promo-info-in color-light" style="left:15px; top:160px; text-shadow: -1px 1px #000000;"
         data-effect="bottom(40)"
         data-duration="2000"
@@ -9,7 +11,7 @@
         data-ease="easeOutExpo">
         {{ text_header_line_1 }}
     </div>
-
+{% endthumbnail %}
     <div class="ms-layer ms-promo-info ms-promo-info-in color-light" style="left:15px; top:210px; text-shadow: -1px 1px #000000;"
         data-effect="bottom(40)"
         data-duration="2000"
