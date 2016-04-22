@@ -1,10 +1,14 @@
+{% load static from staticfiles %}
+
 {% block tinymce_script %}
 	{% if TINYMCE_JS_URL %}
-		<script type="text/javascript" src="{{ TINYMCE_JS_URL }}"></script>
+		<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 	{% endif %}
 {% endblock %}
 
 {% block tinymce_init %}
+
+  <script type="text/javascript" src="{% static 'tinymce_browser/callback.js' %}"></script>
 	<script type="text/javascript">
 		{% block functions %}{% endblock %}
     {% if TINYMCE_DOMAIN %}
@@ -25,6 +29,7 @@
             statusbar: false,
             menubar: false,
 	        toolbar: 'table undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            file_browser_callback : feigncmsBrowser,
 {% endblock %}
         };
 

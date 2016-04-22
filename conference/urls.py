@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^admin/logout/$', logout, name="admin_logout"),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^gallery/', include('gallery.urls')),
+    url(r'^tinymce-browser/', include('tinymce_browser.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += patterns(
