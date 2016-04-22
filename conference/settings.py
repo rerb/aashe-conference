@@ -143,7 +143,7 @@ USE_S3 = os.environ.get('USE_S3', None)
 if USE_S3:
     INSTALLED_APPS += ('s3_folder_storage',)
     from integration_settings.media.s3 import *
-    AWS_QUERYSTRING_AUTH = True
+    AWS_S3_SECURE_URLS = False
     FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join(DEFAULT_S3_PATH, 'medialibrary')
 
 else:
