@@ -58,7 +58,6 @@ INSTALLED_APPS = (
     'block_content',
     'django_markup',
     'integration_settings.authentication',
-    'integration_settings.logging',
     'integration_settings.google_analytics',
 )
 
@@ -114,7 +113,8 @@ from integration_settings.authentication import *
 from integration_settings.google_analytics import *
 
 # Import logging settings
-from integration_settings.logging import *
+from integration_settings.logging.sentry import *
+INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
