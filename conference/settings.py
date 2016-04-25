@@ -63,6 +63,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'minidetector.Middleware',
     'django.middleware.gzip.GZipMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -89,8 +90,8 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.core.context_processors.request',
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.core.context_processors.media',
                 'django.core.context_processors.static',
                 'django.contrib.auth.context_processors.auth',
