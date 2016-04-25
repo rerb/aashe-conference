@@ -114,7 +114,6 @@ from integration_settings.google_analytics import *
 
 # Import logging settings
 from integration_settings.logging.sentry import *
-INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
