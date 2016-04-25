@@ -1,6 +1,6 @@
 {% load thumbnail %}
 {% thumbnail image.file.url "1600x900" as im %}
-<div class="banner-image breadcrumbs-v3 img-v3 text-center" style="background: url('{{ im.url }}'); background-size: 100%; background-position: center center; background-repeat: no-repeat;">
+<div class="banner-image breadcrumbs-v3 img-v3 text-center" style="background: url('{{ im.url }}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
     <div class="container">
         <h1>{{ text_header }}</h1>
         <p>{{ text_block }}</p>
