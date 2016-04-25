@@ -104,6 +104,7 @@ Page.register_templates(
         'regions': (
             ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
+            ('rich_text_content', _('Rich Text Block')),
             ('flickr_gallery', _('Flickr Gallery')),
             ('videos', _('Youtube Videos')),
             ('sponsors', _('Sponsors')),
