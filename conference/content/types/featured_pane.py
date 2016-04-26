@@ -38,7 +38,7 @@ class FeaturedPane(models.Model):
         ('icon-communication-082', 'Communication 082 (arrows around paper)'),
     ]
 
-    icon = models.CharField(choices=ICON_CHOICES, max_length=128, verbose_name="Select Icon")
+    icon = models.CharField(choices=ICON_CHOICES, max_length=1028, verbose_name="Select Icon")
     title = models.TextField(max_length=64, verbose_name="Title")
     text_block = models.TextField(max_length=256, verbose_name="Text Block")
     button_url = models.TextField(max_length=255, blank=True, verbose_name="Button URL (optional)")
