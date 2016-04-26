@@ -20,6 +20,11 @@ class TwoColumnKeynote(models.Model):
         abstract = True
         verbose_name = "Two Column Keynote"
 
+    def make_email_links(self, text_block):
+        words = [word if '@' not in word else '<a href="mailto:{0}">{0}</a>'.format(word)
+                 for word in text_block.split(" ")]
+        return " ".join(words)
+
     def render(self, **kwargs):
 
         if self.orientation == 'Left':
@@ -29,5 +34,5 @@ class TwoColumnKeynote(models.Model):
 
         return render_to_string(template, {
             'image': self.image,
-            'text_block': mark_safe(self.text_block),
+            'text_block': mark_safe(self.make_email_links(self.text_block)),
         })

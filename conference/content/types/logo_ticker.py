@@ -34,7 +34,7 @@ class SponsorLogo(models.Model):
     image = MediaFileForeignKey(MediaFile, related_name='+',
                                 limit_choices_to={'type': 'image'},
                                 verbose_name="Logo Image")
-    url = models.URLField()
+    url = models.TextField(max_length=255)
 
     class Meta:
         verbose_name = 'Sponsor Logo'

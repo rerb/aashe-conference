@@ -3,7 +3,7 @@ from django.template.loader import render_to_string
 
 
 class SingleButton(models.Model):
-    button_url = models.URLField()
+    button_url = models.TextField(max_length=255)
     button_text = models.TextField(max_length=15)
 
     def render(self, **kwargs):
@@ -21,9 +21,9 @@ class SingleButton(models.Model):
 
 
 class DoubleButton(models.Model):
-    button_url_1 = models.URLField()
+    button_url_1 = models.TextField(max_length=255)
     button_text_1 = models.TextField(max_length=15)
-    button_url_2 = models.URLField()
+    button_url_2 = models.TextField(max_length=255)
     button_text_2 = models.TextField(max_length=15)
 
     def render(self, **kwargs):
