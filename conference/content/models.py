@@ -157,7 +157,8 @@ Page.register_templates(
 if os.environ.get('CMS', False):
     Page.create_content_type(MainSlider, regions=('main_slider',))
     Page.create_content_type(GalleryContent, regions=('about', 'content', 'main_content', 'additional_content',))
-    Page.create_content_type(VideoContent, regions=('about', 'content', 'main_content', 'additional_content', 'videos',))
+    Page.create_content_type(VideoContent, regions=('about', 'content', 'main_content', 'additional_content', 'videos',
+                                                    'medium-image-right-column',))
     Page.create_content_type(LogoTicker, regions=('sponsors',))
     Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
     Page.create_content_type(RichTextContent,
