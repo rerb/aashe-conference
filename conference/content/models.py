@@ -80,12 +80,12 @@ Page.register_templates(
             ('header_block', _('Header Block')),
             ('main_slider', _('Main Slider')),
             ('call_to_action', _('Call To Action Bar')),
+            ('featured', _('Featured')),
             ('rich-text-left-column', _('Left Column Text Block')),
             ('medium-image-right-column', _('Right Column Image')),
             ('parallax_box_1', _('Parallax Box 1')),
             ('about', _('About')),
             ('parallax_box_2', _('Parallax Box 2')),
-            ('featured', _('Featured')),
             ('sponsors', _('Sponsors')),
         )},
     {

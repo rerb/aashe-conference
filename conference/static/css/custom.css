@@ -93,3 +93,17 @@ li a {
 .header .navbar-nav > li > a:hover {
 		color: #6BBC49;
 	}
+
+.service-block-v8 .service-block-desc h3 {
+  margin: 0 0 15px;
+}
+
+.service-block-v8 .service-block-desc h3::after {
+  left: 0;
+  top: 30px;
+  height: 1px;
+  width: 30px;
+  content: " ";
+  position: absolute;
+  background: #72c02c;
+}
