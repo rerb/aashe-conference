@@ -162,7 +162,7 @@ if os.environ.get('CMS', False):
     Page.create_content_type(LogoTicker, regions=('sponsors',))
     Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
     Page.create_content_type(RichTextContent,
-                             regions=('about', 'content', 'main_content', 'additional_content',
+                             regions=('about', 'content', 'main_content', 'additional_content', 'flickr_gallery',
                                       'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
