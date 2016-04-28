@@ -16,6 +16,10 @@
   margin: 0;
 }
 
+.top-nav {
+  margin-top: 10px;
+}
+
 .header .navbar-nav > li > a {
   padding: 0 30px 6px 20px;
 }
