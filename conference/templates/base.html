@@ -8,9 +8,7 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 {% load static %}
 {% load compress %}
-{% load cache %}
 
-{% cache 86400 head %}
 <head>
     <title>{% block head_title %}AASHE Conference &amp; Expo{% endblock %}</title>
 
@@ -26,7 +24,6 @@
         {% include 'styles.html' %}
     {% endblock %}
 </head>
-{% endcache %}
 
 <div class="wrapper">
     {% block header %}
@@ -85,7 +82,6 @@
         </div>
         <!-- /Header -->
     {% endblock %}
-    {% cache 86400 content request.path %}
     {% block title %}{% endblock %}
     {% block content %}{% endblock %}
     {% block sponsor_bar %}
@@ -96,15 +92,12 @@
     {% block footer %}
         {% include 'footer.html' %}
     {% endblock %}
-    {% endcache %}
 </div>
 
-{% cache 86400 javascript %}
 {% block javascript %}
     {% include 'javascript.html' %}
     <script type="text/javascript" src="{% static 'tinymce_browser/callback.js' %}"></script>
 {% endblock %}
-{% endcache %}
 {% block analytics %}
     {% add_analytics %}
 {% endblock %}
