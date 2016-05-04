@@ -5,6 +5,7 @@ from django.template.loader import render_to_string
 class PricingTable(models.Model):
     registration_levels = models.ManyToManyField('RegistrationLevel', verbose_name="Registration Levels")
     deadlines = models.ManyToManyField('Deadline', verbose_name="Deadlines")
+    cvent_link = models.TextField(max_length=256, verbose_name="CVENT Registration Link", blank=True)
 
     class Meta:
         abstract = True
@@ -37,6 +38,7 @@ class PricingTable(models.Model):
             'registration_levels': registration_levels,
             'deadlines': deadlines,
             'columns': columns,
+            'cvent_link': self.cvent_link,
         })
 
 
