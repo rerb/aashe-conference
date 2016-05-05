@@ -1,0 +1,17 @@
+<div class="container" style="padding-top:20px;">
+    <div>
+        {{ title_block }}
+    </div>
+    <div class="col-md-6" style="display: inline-block; margin-left: auto; margin-right:auto; padding-top: 25px;">
+        {{ flickr_embed_code }}
+    </div>
+    {% if youtube_url %}
+        <div class="col-md-6" style="display: inline-block; padding-top: 25px; height: 338px;">
+            <iframe allowfullscreen="" frameborder="0" height="338" src="{{ youtube_url }}" width="560"></iframe>
+        </div>
+    {% else %}
+        <div class="col-md-6" style="display: inline-block; padding-top: 25px; height: 338px; text-align: center; line-height: 338px;">
+            {{ no_youtube_message }}
+        </div>
+    {% endif %}
+</div>
