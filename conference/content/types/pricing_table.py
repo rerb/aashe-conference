@@ -24,10 +24,10 @@ class PricingTable(models.Model):
             for level in registration_levels:
                 # Need to unpack the levels into a temp list in order to match the indexing
                 level_deadline_list = [
-                    level.first_deadline_price,
-                    level.second_deadline_price,
-                    level.third_deadline_price,
-                    level.on_site_price
+                    {'price': level.first_deadline_price, 'level': level},
+                    {'price': level.second_deadline_price, 'level': level},
+                    {'price': level.third_deadline_price, 'level': level},
+                    {'price': level.on_site_price, 'level': level},
                 ]
                 # Add a price to list of prices
                 column['prices'].append(level_deadline_list[x])

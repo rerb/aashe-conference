@@ -1,5 +1,5 @@
 <div class="row no-space-pricing pricing-mega-v1">
-    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+    <div class="col-md-4 col-sm-4 hidden-sm hidden-xs">
         <div class="pricing hidden-area">
             <ul class="pricing-content list-unstyled">
                 {% for level in registration_levels %}
@@ -14,7 +14,7 @@
         </div>
     </div>
     {% for column in columns %}
-        <div class="col-md-2 col-sm-6 block">
+        <div class="col-md-2 col-sm-2 block" style="padding: 0;">
             <div class="pricing">
                 <div class="pricing-head" style="height: 75px;">
                     <h3>
@@ -24,7 +24,8 @@
                 <ul class="pricing-content list-unstyled ">
                         {% for price in column.prices %}
                             <li class="bg-color">
-                                ${{ price }}
+                                ${{ price.price }}
+                                <span class="hidden-md hidden-lg">{{ price.level.level_name }}</span>
                             </li>
                         {% endfor %}
                 </ul>
