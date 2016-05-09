@@ -25,7 +25,11 @@
                         {% for price in column.prices %}
                             <li class="bg-color">
                                 ${{ price.price }}
-                                <span class="hidden-md hidden-lg">{{ price.level.level_name }}</span>
+                                <span class="hidden-md hidden-lg">
+                                    <a href="#" data-toggle="popover" data-content="{{ price.level.level_details }}" data-placement="bottom">
+                                        {{ price.level.level_name }}
+                                    </a>
+                                </span>
                             </li>
                         {% endfor %}
                 </ul>
