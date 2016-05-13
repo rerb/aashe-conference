@@ -11,6 +11,7 @@ django-heroku-memcacheify
 django-htmlmin
 feincms>=1.11
 gunicorn
+newrelic
 psycopg2
 pylibmc
 raven
