@@ -16,7 +16,7 @@ class PricingTable(models.Model):
         registration_levels = self.registration_levels.select_related()
         # Need to repack all of the deadlines and prices into organized columns that can be looped through
         columns = []
-        for x in range(0, 4):
+        for x in range(0, len(deadlines)):
             # Create a column for this deadline with the deadline name as the header and
             # and empty list to put prices in order
             column = {'deadline': deadlines[x],
@@ -60,6 +60,7 @@ class RegistrationLevel(models.Model):
 
 class Deadline(models.Model):
     deadline = models.TextField(max_length=128)
+    strikethrough = models.BooleanField()
 
     class Meta:
         verbose_name = "Deadline"

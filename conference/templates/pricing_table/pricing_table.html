@@ -17,33 +17,37 @@
         <div class="col-md-2 col-sm-2 block">
             <div class="pricing">
                 <div class="pricing-head" style="height: 75px;">
-                    <h3>
-                        {{ column.deadline }}
-                    </h3>
+                    {% if column.deadline.strikethrough %}
+                        <h3 style="background-color: darkgray;">
+                    {% else %}
+                        <h3>
+                    {% endif %}
+                            {{ column.deadline }}
+                        </h3>
                 </div>
                 <ul class="pricing-content list-unstyled ">
-                        {% for price in column.prices %}
-                            <li class="bg-color">
+                    {% for price in column.prices %}
+                        <li class="bg-color">
+                            {% if column.deadline.strikethrough %}
+                                <s>${{ price.price }}</s>
+                            {% else %}
                                 ${{ price.price }}
-                                <span class="hidden-md hidden-lg">
-                                    <a href="#" data-toggle="popover" data-content="{{ price.level.level_details }}" data-placement="bottom">
-                                        {{ price.level.level_name }}
-                                    </a>
-                                </span>
-                            </li>
-                        {% endfor %}
+                            {% endif %}
+                            <span class="hidden-md hidden-lg">
+                                <a href="#" data-toggle="popover" data-content="{{ price.level.level_details }}" data-placement="bottom">
+                                    {{ price.level.level_name }}
+                                </a>
+                            </span>
+                        </li>
+                    {% endfor %}
                 </ul>
                 <div class="btn-group btn-group-justified">
-                    {% if cvent_link %}
-                        <a class="btn-u btn-block" href="{{ cvent_link }}">
-                            <i class="fa fa-shopping-cart"></i>
-                                Register
-                            <i class="fa"></i>
+                    {% if column.deadline.strikethrough %}
+                        <a class="btn-u btn-block" href="#" style="background-color: darkgray;">
+                            Deadline Has Passed
                         </a>
                     {% else %}
-                        <a class="btn-u btn-block" href="#">
-                            Registration Coming Soon
-                        </a>
+                        {% include 'pricing_table/registration_button.html' %}
                     {% endif %}
                 </div>
             </div>
