@@ -28,6 +28,7 @@ class HostInstitutionBlock(models.Model):
 class HostInstitutionLogoCollection(models.Model):
     LEVEL_CHOICES = [
         ('Platinum', 'Platinum'),
+        ('Gold', 'Gold'),
         ('Silver', 'Silver'),
         ('Bronze', 'Bronze'),
         ('Friend', 'Friend'),
