@@ -31,6 +31,7 @@ from types.pricing_table import PricingTable
 from types.featured_pane import FeaturedPane
 from types.table import TableContent
 from types.gallery_block import GalleryBlock
+from types.host_institutions import HostInstitutionBlock
 
 
 """
@@ -194,6 +195,9 @@ if os.environ.get('CMS', False):
                              regions=('about', 'content', 'main_content', 'additional_content',
                                       'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
     Page.create_content_type(GalleryBlock, regions=('flickr_gallery',))
+    Page.create_content_type(HostInstitutionBlock,
+                             regions=('about', 'content', 'main_content', 'additional_content',
+                                      'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
 
 """
     Register page extension modules

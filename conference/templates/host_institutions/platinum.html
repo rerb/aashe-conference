@@ -1,0 +1,9 @@
+{% load thumbnail %}
+{{ feincms_page.content.media }}
+<div class="col-md-3" style="height:275px;">
+    <a href="{{ image.url }}">
+        {% thumbnail image.image.file.url "275x275" as im %}
+            <img src="{{ im.url }}" alt="" />
+        {% endthumbnail %}
+    </a>
+</div>
