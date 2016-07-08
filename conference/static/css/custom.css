@@ -95,22 +95,26 @@ li a {
   background: #72c02c;
 }
 
-.host {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  vertical-align: middle;
+.host-block {
+  padding-bottom: 15px;
 }
 
-.host img {
-  display: inline-block;
+.host {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
 }
 
 .host-section-header {
+  display: inline-block;
   width: 100%;
   text-align: center;
+}
+
+.logo {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  float: none;
 }
