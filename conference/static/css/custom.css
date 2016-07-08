@@ -96,7 +96,7 @@ li a {
 }
 
 .host-block {
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
 
 .host {
@@ -117,4 +117,7 @@ li a {
   height: auto;
   width: auto;
   float: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
