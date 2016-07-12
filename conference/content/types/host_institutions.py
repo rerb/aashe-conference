@@ -12,7 +12,7 @@ class HostInstitutionBlock(models.Model):
         verbose_name = "Host Institutions Block"
 
     def render(self, **kwargs):
-        images = self.images.images.select_related()
+        images = self.images.images.select_related().order_by('name')
         logos = []
         for image in images:
             logo = render_to_string('host_institutions/' + self.images.level.lower() + '.html', {
