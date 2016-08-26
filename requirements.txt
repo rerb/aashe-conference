@@ -8,7 +8,7 @@ dj-database-url
 dj-static
 django-compressor==2.1
 django-heroku-memcacheify
-django-htmlmin
+django-htmlmin==2.0.0
 feincms>=1.11
 gunicorn
 newrelic
