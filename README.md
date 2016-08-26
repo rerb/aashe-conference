@@ -1,6 +1,6 @@
 # aashe-conference
 
-[![Build Status](https://travis-ci.org/AASHE/aashe-conference.svg?branch=master)](https://travis-ci.org/AASHE/aashe-conference) [![Coverage Status](https://coveralls.io/repos/github/AASHE/aashe-conference/badge.svg?branch=master)](https://coveralls.io/github/AASHE/aashe-conference?branch=master)
+[![Build Status](https://travis-ci.org/AASHE/aashe-conference.svg?branch=master)](https://travis-ci.org/AASHE/aashe-conference) [![Coverage Status](https://coveralls.io/repos/github/AASHE/aashe-conference/badge.svg?branch=master)](https://coveralls.io/github/AASHE/aashe-conference?branch=master)[![Issue Count](https://codeclimate.com/github/AASHE/aashe-conference/badges/issue_count.svg)](https://codeclimate.com/github/AASHE/aashe-conference)
 
 http://conference.aashe.org/
 
