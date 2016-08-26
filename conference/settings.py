@@ -13,6 +13,19 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from memcacheify import memcacheify
+
+# Import authentication settings
+from integration_settings.authentication import *
+
+# Import google analytics
+from integration_settings.google_analytics import *
+
+# Import logging settings
+from integration_settings.logging.sentry import *
+
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -79,7 +92,6 @@ MIDDLEWARE_CLASSES = (
     'htmlmin.middleware.MarkRequestMiddleware',
 )
 
-from memcacheify import memcacheify
 CACHES = memcacheify()
 
 CACHE_MIDDLEWARE_SECONDS = 86400
@@ -110,19 +122,11 @@ WSGI_APPLICATION = 'conference.wsgi.application'
 AUTHENTICATION_BACKENDS = ('aashe.aasheauth.backends.AASHEBackend',
                            'django.contrib.auth.backends.ModelBackend',)
 
-# Import authentication settings
-from integration_settings.authentication import *
 
-# Import google analytics
-from integration_settings.google_analytics import *
-
-# Import logging settings
-from integration_settings.logging.sentry import *
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-import dj_database_url
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL', None)),
 }
@@ -149,7 +153,8 @@ if USE_S3:
     INSTALLED_APPS += ('s3_folder_storage',)
     from integration_settings.media.s3 import *
     AWS_S3_SECURE_URLS = False
-    FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join(DEFAULT_S3_PATH, 'medialibrary')
+    FEINCMS_MEDIALIBRARY_UPLOAD_TO = os.path.join(
+        DEFAULT_S3_PATH, 'medialibrary')
 
 else:
     MEDIA_ROOT = os.environ.get("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
@@ -221,5 +226,6 @@ USE_TZ = True
 
 HTML_MINIFY = os.environ.get('HTML_MINIFY', False)
 
-GOOGLE_ANALYTICS_PROPERTY_ID = os.environ.get('GOOGLE_ANALYTICS_PROPERTY_ID', None)
+GOOGLE_ANALYTICS_PROPERTY_ID = os.environ.get(
+    'GOOGLE_ANALYTICS_PROPERTY_ID', None)
 GOOGLE_ANALYTICS_DOMAIN = os.environ.get('GOOGLE_ANALYTICS_DOMAIN', None)
