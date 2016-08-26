@@ -5,7 +5,8 @@ from feincms.module.medialibrary.fields import MediaFileForeignKey
 
 
 class MediumImage(models.Model):
-    image = MediaFileForeignKey(MediaFile, related_name='+', limit_choices_to={'type': 'image'})
+    image = MediaFileForeignKey(
+        MediaFile, related_name='+', limit_choices_to={'type': 'image'})
 
     class Meta:
         abstract = True

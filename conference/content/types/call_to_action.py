@@ -14,7 +14,8 @@ class CallToAction(models.Model):
         verbose_name = "Call To Action Bar"
 
     def make_email_links(self, text_block):
-        words = [word if '@' not in word else '<a href="mailto:{0}">{0}</a>'.format(word)
+        words = [word if '@' not in word
+                 else '<a href="mailto:{0}">{0}</a>'.format(word)
                  for word in text_block.split(" ")]
         return " ".join(words)
 

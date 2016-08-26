@@ -5,7 +5,8 @@ from feincms.module.medialibrary.fields import MediaFileForeignKey
 
 
 class SingleImageBanner(models.Model):
-    image = MediaFileForeignKey(MediaFile, related_name='+', limit_choices_to={'type': 'image'})
+    image = MediaFileForeignKey(
+        MediaFile, related_name='+', limit_choices_to={'type': 'image'})
     text_header = models.TextField(max_length=15)
     text_block = models.TextField(max_length=35)
 
@@ -14,8 +15,10 @@ class SingleImageBanner(models.Model):
         verbose_name = "Static Single Image Banner"
 
     def render(self, **kwargs):
-        return render_to_string('single_image_banner/single_image_banner.html', {
-            'image': self.image,
-            'text_header': self.text_header,
-            'text_block': self.text_block,
-        })
+        return render_to_string(
+            'single_image_banner/single_image_banner.html', {
+                'image': self.image,
+                'text_header': self.text_header,
+                'text_block': self.text_block,
+            }
+        )

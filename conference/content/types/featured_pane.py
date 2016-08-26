@@ -38,18 +38,22 @@ class FeaturedPane(models.Model):
         ('icon-communication-082', 'Communication 082 (arrows around paper)'),
     ]
 
-    icon = models.CharField(choices=ICON_CHOICES, max_length=1028, verbose_name="Select Icon")
+    icon = models.CharField(
+        choices=ICON_CHOICES, max_length=1028, verbose_name="Select Icon")
     title = models.TextField(max_length=64, verbose_name="Title")
     text_block = models.TextField(max_length=256, verbose_name="Text Block")
-    button_url = models.TextField(max_length=255, blank=True, verbose_name="Button URL (optional)")
-    button_text = models.TextField(blank=True, max_length=32, verbose_name="Button Text")
+    button_url = models.TextField(
+        max_length=255, blank=True, verbose_name="Button URL (optional)")
+    button_text = models.TextField(
+        blank=True, max_length=32, verbose_name="Button Text")
 
     class Meta:
         abstract = True
         verbose_name = "Featured Pane"
 
     def make_email_links(self, text_block):
-        words = [word if '@' not in word else '<a href="mailto:{0}">{0}</a>'.format(word)
+        words = [word if '@' not in word
+                 else '<a href="mailto:{0}">{0}</a>'.format(word)
                  for word in text_block.split(" ")]
         return " ".join(words)
 

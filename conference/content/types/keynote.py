@@ -12,7 +12,8 @@ class TwoColumnKeynote(models.Model):
         ('Right', 'Image Right'),
     )
 
-    image = MediaFileForeignKey(MediaFile, related_name='+', limit_choices_to={'type': 'image'})
+    image = MediaFileForeignKey(
+        MediaFile, related_name='+', limit_choices_to={'type': 'image'})
     text_block = RichTextField()
     orientation = models.CharField(max_length=5, choices=ORIENTATIONS)
 
@@ -21,7 +22,8 @@ class TwoColumnKeynote(models.Model):
         verbose_name = "Two Column Keynote"
 
     def make_email_links(self, text_block):
-        words = [word if '@' not in word else '<a href="mailto:{0}">{0}</a>'.format(word)
+        words = [word if '@' not in word
+                 else '<a href="mailto:{0}">{0}</a>'.format(word)
                  for word in text_block.split(" ")]
         return " ".join(words)
 

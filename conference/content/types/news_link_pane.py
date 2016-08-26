@@ -6,7 +6,8 @@ from django.utils.safestring import mark_safe
 
 
 class NewsLinkPane(models.Model):
-    image = MediaFileForeignKey(MediaFile, related_name='+', limit_choices_to={'type': 'image'})
+    image = MediaFileForeignKey(
+        MediaFile, related_name='+', limit_choices_to={'type': 'image'})
     title = models.TextField(max_length=32)
     text_block = models.TextField(max_length=100)
     url = models.TextField(max_length=255)
@@ -16,7 +17,8 @@ class NewsLinkPane(models.Model):
         verbose_name = "News Link Pane"
 
     def make_email_links(self, text_block):
-        words = [word if '@' not in word else '<a href="mailto:{0}">{0}</a>'.format(word)
+        words = [word if '@' not in word
+                 else '<a href="mailto:{0}">{0}</a>'.format(word)
                  for word in text_block.split(" ")]
         return " ".join(words)
 

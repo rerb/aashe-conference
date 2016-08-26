@@ -6,9 +6,13 @@ from feincms.content.richtext.models import RichTextField
 
 class GalleryBlock(models.Model):
     title_block = RichTextField(verbose_name="Title Text Block")
-    flickr_embed_code = models.TextField(verbose_name="Full Flickr Embed Code (remember to modify height & width)")
-    youtube_url = models.TextField(blank=True, verbose_name="Youtube Video URL")
-    no_youtube_message = models.TextField(blank=True, verbose_name="Optional Message if No Youtube Video")
+    flickr_embed_code = models.TextField(
+        verbose_name=
+        "Full Flickr Embed Code (remember to modify height & width)")
+    youtube_url = models.TextField(
+        blank=True, verbose_name="Youtube Video URL")
+    no_youtube_message = models.TextField(
+        blank=True, verbose_name="Optional Message if No Youtube Video")
 
     class Meta:
         abstract = True

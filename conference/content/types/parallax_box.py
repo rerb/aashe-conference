@@ -5,7 +5,8 @@ from feincms.module.medialibrary.fields import MediaFileForeignKey
 
 
 class ParallaxBox(models.Model):
-    image = MediaFileForeignKey(MediaFile, related_name='+', limit_choices_to={'type': 'image'})
+    image = MediaFileForeignKey(
+        MediaFile, related_name='+', limit_choices_to={'type': 'image'})
     text_content = models.TextField()
 
     class Meta:

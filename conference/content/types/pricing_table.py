@@ -3,9 +3,11 @@ from django.template.loader import render_to_string
 
 
 class PricingTable(models.Model):
-    registration_levels = models.ManyToManyField('RegistrationLevel', verbose_name="Registration Levels")
+    registration_levels = models.ManyToManyField(
+        'RegistrationLevel', verbose_name="Registration Levels")
     deadlines = models.ManyToManyField('Deadline', verbose_name="Deadlines")
-    cvent_link = models.TextField(max_length=256, verbose_name="CVENT Registration Link", blank=True)
+    cvent_link = models.TextField(
+        max_length=256, verbose_name="CVENT Registration Link", blank=True)
 
     class Meta:
         abstract = True
@@ -14,15 +16,18 @@ class PricingTable(models.Model):
     def render(self, **kwargs):
         deadlines = self.deadlines.select_related()
         registration_levels = self.registration_levels.select_related()
-        # Need to repack all of the deadlines and prices into organized columns that can be looped through
+        # Need to repack all of the deadlines and prices
+        # into organized columns that can be looped through
         columns = []
         for x in range(0, len(deadlines)):
-            # Create a column for this deadline with the deadline name as the header and
+            # Create a column for this deadline
+            # with the deadline name as the header and
             # and empty list to put prices in order
             column = {'deadline': deadlines[x],
                       'prices': []}
             for level in registration_levels:
-                # Need to unpack the levels into a temp list in order to match the indexing
+                # Need to unpack the levels into a temp list
+                # in order to match the indexing
                 level_deadline_list = [
                     {'price': level.first_deadline_price, 'level': level},
                     {'price': level.second_deadline_price, 'level': level},
@@ -44,10 +49,14 @@ class PricingTable(models.Model):
 
 class RegistrationLevel(models.Model):
     level_name = models.TextField(max_length=128, verbose_name="Name")
-    level_details = models.TextField(max_length=512, verbose_name="Details", blank=True)
-    first_deadline_price = models.IntegerField(verbose_name="First Deadline Price")
-    second_deadline_price = models.IntegerField(verbose_name="Second Deadline Price")
-    third_deadline_price = models.IntegerField(verbose_name="Third Deadline Price")
+    level_details = models.TextField(
+        max_length=512, verbose_name="Details", blank=True)
+    first_deadline_price = models.IntegerField(
+        verbose_name="First Deadline Price")
+    second_deadline_price = models.IntegerField(
+        verbose_name="Second Deadline Price")
+    third_deadline_price = models.IntegerField(
+        verbose_name="Third Deadline Price")
     on_site_price = models.IntegerField(verbose_name="On-Site Price")
 
     class Meta:
