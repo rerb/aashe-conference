@@ -1,12 +1,13 @@
 Django>=1.8.7, < 1.9
 django-logical-rules
 django-s3-folder-storage
+setuptools>=18.5
 
 # Deployment specific
 Pillow
 dj-database-url
 dj-static
-django-compressor==1.5
+django-compressor==2.1
 django-heroku-memcacheify
 django-htmlmin
 feincms>=1.11
