@@ -123,7 +123,6 @@ AUTHENTICATION_BACKENDS = ('aashe.aasheauth.backends.AASHEBackend',
                            'django.contrib.auth.backends.ModelBackend',)
 
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
