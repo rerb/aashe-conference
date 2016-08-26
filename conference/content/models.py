@@ -2,17 +2,12 @@ from feincms.module.page.models import Page
 from django.utils.translation import ugettext_lazy as _
 import os
 
-"""
-    Import built-in FeinCMS content type models
-"""
+
 from feincms.content.raw.models import RawContent
 from feincms.content.video.models import VideoContent
 from feincms.content.richtext.models import RichTextContent
 from gallery.models import GalleryContent
 
-"""
-    Import custom content type models
-"""
 from gallery import specs
 from types.master_slider import MainSlider, SliderImage
 from types.logo_ticker import LogoTicker, SponsorLogo
@@ -158,46 +153,110 @@ Page.register_templates(
 """
 if os.environ.get('CMS', False):
     Page.create_content_type(MainSlider, regions=('main_slider',))
-    Page.create_content_type(GalleryContent, regions=('about', 'content', 'main_content', 'additional_content',))
-    Page.create_content_type(VideoContent, regions=('about', 'content', 'main_content', 'additional_content', 'videos',
-                                                    'medium-image-right-column',))
+    Page.create_content_type(GalleryContent, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',)
+                             )
+    Page.create_content_type(VideoContent, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',
+                                'videos',
+                                'medium-image-right-column',)
+                             )
     Page.create_content_type(LogoTicker, regions=('sponsors',))
-    Page.create_content_type(ParallaxBox, regions=('parallax_box_1', 'parallax_box_2', 'parallax',))
-    Page.create_content_type(RichTextContent,
-                             regions=('about', 'content', 'main_content', 'additional_content', 'flickr_gallery',
-                                      'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
+    Page.create_content_type(ParallaxBox, regions=(
+                                'parallax_box_1',
+                                'parallax_box_2',
+                                'parallax',)
+                             )
+    Page.create_content_type(RichTextContent, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',
+                                'flickr_gallery',
+                                'rich-text-left-column',
+                                'rich_text_content',
+                                'rich_text_1',
+                                'rich_text_2',)
+                             )
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
     Page.create_content_type(DoubleButton)
-    Page.create_content_type(SingleImageBanner, regions=('title_banner', 'call_to_action'))
-    Page.create_content_type(MediumImage,
-                             regions=('about', 'content', 'main_content', 'additional_content',
-                                      'medium-image-right-column',))
-    Page.create_content_type(LargeImage,
-                             regions=('about', 'content', 'main_content', 'additional_content', 'large_image'))
-
-    Page.create_content_type(TwoColumnKeynote, regions=('about', 'content', 'main_content', 'additional_content',))
+    Page.create_content_type(SingleImageBanner, regions=(
+                                'title_banner',
+                                'call_to_action')
+                             )
+    Page.create_content_type(MediumImage, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',
+                                'medium-image-right-column',)
+                             )
+    Page.create_content_type(LargeImage, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',
+                                'large_image')
+                             )
+    Page.create_content_type(TwoColumnKeynote, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',)
+                             )
     Page.create_content_type(TitleBox)
-    Page.create_content_type(RawContent, regions=('flickr_gallery', 'facebook', 'twitter', 'instagram',))
-
+    Page.create_content_type(RawContent, regions=(
+                                'flickr_gallery',
+                                'facebook',
+                                'twitter',
+                                'instagram',)
+                             )
     Page.create_content_type(FeaturedImageLinkPane, regions='featured')
     Page.create_content_type(NewsLinkPane, regions=('featured',))
-
     Page.create_content_type(HeaderBox, regions=('header_block',))
     Page.create_content_type(PricingTable, regions=('pricing_table',))
-    Page.create_content_type(FeaturedPane, regions=('about', 'featured', 'content', 'additional_content',
-                                                    'main_content', 'icon-featured-panes',
-                                                    'icon-featured-panes-row-1', 'icon-featured-panes-row-2',
-                                                    'icon-featured-panes-row-3', 'icon-featured-panes-row-4',
-                                                    'icon-featured-panes-row-5', 'icon-featured-panes-row-6',
-                                                    'icon-featured-panes-row-7',))
-    Page.create_content_type(TableContent,
-                             regions=('about', 'content', 'main_content', 'additional_content',
-                                      'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
+    Page.create_content_type(FeaturedPane, regions=(
+                                 'about', 'featured',
+                                 'content',
+                                 'additional_content',
+                                 'main_content',
+                                 'icon-featured-panes',
+                                 'icon-featured-panes-row-1',
+                                 'icon-featured-panes-row-2',
+                                 'icon-featured-panes-row-3',
+                                 'icon-featured-panes-row-4',
+                                 'icon-featured-panes-row-5',
+                                 'icon-featured-panes-row-6',
+                                 'icon-featured-panes-row-7',)
+                             )
+    Page.create_content_type(TableContent, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',
+                                'rich-text-left-column',
+                                'rich_text_content',
+                                'rich_text_1',
+                                'rich_text_2',)
+                             )
     Page.create_content_type(GalleryBlock, regions=('flickr_gallery',))
-    Page.create_content_type(HostInstitutionBlock,
-                             regions=('about', 'content', 'main_content', 'additional_content',
-                                      'rich-text-left-column', 'rich_text_content', 'rich_text_1', 'rich_text_2',))
+    Page.create_content_type(HostInstitutionBlock, regions=(
+                                'about',
+                                'content',
+                                'main_content',
+                                'additional_content',
+                                'rich-text-left-column',
+                                'rich_text_content',
+                                'rich_text_1',
+                                'rich_text_2',)
+                             )
 
 """
     Register page extension modules

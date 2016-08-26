@@ -15,14 +15,19 @@ class HostInstitutionBlock(models.Model):
         images = self.images.images.select_related().order_by('name')
         logos = []
         for image in images:
-            logo = render_to_string('host_institutions/' + self.images.level.lower() + '.html', {
-                'image': image,
-            })
+            logo = render_to_string(
+                'host_institutions/' +
+                self.images.level.lower() +
+                '.html', {
+                    'image': image,
+                }
+            )
             logos.append(logo)
-        return render_to_string('host_institutions/host_institutions_block.html', {
-            'level': self.images.level,
-            'logos': logos,
-        })
+        return render_to_string(
+            'host_institutions/host_institutions_block.html', {
+                'level': self.images.level,
+                'logos': logos,
+            })
 
 
 class HostInstitutionLogoCollection(models.Model):
@@ -38,7 +43,8 @@ class HostInstitutionLogoCollection(models.Model):
     ]
 
     name = models.TextField(max_length=25)
-    level = models.CharField(choices=LEVEL_CHOICES, max_length=1028, verbose_name="Host/Sponsor Level")
+    level = models.CharField(choices=LEVEL_CHOICES, max_length=1028,
+                             verbose_name="Host/Sponsor Level")
     images = models.ManyToManyField('HostInstitutionLogo', blank=True)
 
     class Meta:
