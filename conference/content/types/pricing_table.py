@@ -58,10 +58,12 @@ class RegistrationLevel(models.Model):
     third_deadline_price = models.IntegerField(
         verbose_name="Third Deadline Price")
     on_site_price = models.IntegerField(verbose_name="On-Site Price")
+    order = models.PositiveIntegerField(default=0)
 
     class Meta:
         verbose_name = "Registration Level"
         verbose_name_plural = "Registration Levels"
+        ordering = ('order', 'pk')
 
     def __unicode__(self):
         return u'%s' % self.level_name
@@ -69,11 +71,13 @@ class RegistrationLevel(models.Model):
 
 class Deadline(models.Model):
     deadline = models.TextField(max_length=128)
+    order = models.PositiveIntegerField(default=0)
     strikethrough = models.BooleanField()
 
     class Meta:
         verbose_name = "Deadline"
         verbose_name_plural = "Deadlines"
+        ordering = ('order', 'pk')
 
     def __unicode__(self):
         return u'%s' % self.deadline
