@@ -182,7 +182,8 @@ if os.environ.get('CMS', False):
                                 'rich-text-left-column',
                                 'rich_text_content',
                                 'rich_text_1',
-                                'rich_text_2',)
+                                'rich_text_2',
+                                'medium-image-right-column')
                              )
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
