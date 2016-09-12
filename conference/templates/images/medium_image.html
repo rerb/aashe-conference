@@ -1,6 +1,6 @@
 {% load thumbnail %}
 
-<div class="col-md-6">
+<div>
     <!-- thumbnailed -->
     {% thumbnail image.file.url "600x600" as im %}
         <img class="img-responsive" src="{{ im.url }}">
