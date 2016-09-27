@@ -5,6 +5,9 @@
         {% feincms_render_region feincms_page "title_banner" request %}
     </div>
     <div class="container">
+        {% feincms_render_region feincms_page "content" %}
+    </div>
+    <div class="container">
         <div class="video-gallery col-md-4">
             {% feincms_render_region feincms_page "video-column-1" request %}
         </div>
@@ -14,5 +17,8 @@
         <div class="video-gallery col-md-4">
             {% feincms_render_region feincms_page "video-column-3" request %}
         </div>
+    </div>
+    <div class="container">
+        {% feincms_render_region feincms_page "additional_content" %}
     </div>
 {% endblock %}

@@ -124,9 +124,11 @@ Page.register_templates(
         'regions': (
             ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
+            ('content', _('Content')),
             ('video-column-1', _('Video Column 1')),
             ('video-column-2', _('Video Column 2')),
             ('video-column-3', _('Video Column 3')),
+            ('additional_content', _('Additional Content')),
             ('sponsors', _('Sponsors')),
         )},
     {
