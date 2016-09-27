@@ -27,6 +27,7 @@ from types.featured_pane import FeaturedPane
 from types.table import TableContent
 from types.gallery_block import GalleryBlock
 from types.host_institutions import HostInstitutionBlock
+from types.pdf_embed import PDFEmbed
 
 
 """
@@ -272,6 +273,14 @@ if os.environ.get('CMS', False):
                                 'rich-text-left-column'
                                 'rich-text-left-column-2',
                                 'rich_text_content',
+                                'rich_text_1',
+                                'rich_text_2',)
+                             )
+    Page.create_content_type(PDFEmbed, regions=(
+                                'content',
+                                'main_content',
+                                'rich_text_content',
+                                'additional_content',
                                 'rich_text_1',
                                 'rich_text_2',)
                              )
