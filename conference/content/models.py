@@ -68,6 +68,8 @@ Page.register_templates(
             ('main_content', _('Main Content')),
             ('call_to_action', _('Parallax Box')),
             ('additional_content', _('Additional Content')),
+            ('rich-text-left-column-2', _('Left Column Text Block 2')),
+            ('medium-image-right-column-2', _('Right Column Image 2')),
             ('sponsors', _('Sponsors')),
         )},
     {
@@ -165,7 +167,8 @@ if os.environ.get('CMS', False):
                                 'main_content',
                                 'additional_content',
                                 'videos',
-                                'medium-image-right-column',)
+                                'medium-image-right-column',
+                                'medium-image-right-column-2')
                              )
     Page.create_content_type(LogoTicker, regions=('sponsors',))
     Page.create_content_type(ParallaxBox, regions=(
@@ -180,10 +183,12 @@ if os.environ.get('CMS', False):
                                 'additional_content',
                                 'flickr_gallery',
                                 'rich-text-left-column',
+                                'rich-text-left-column-2',
                                 'rich_text_content',
                                 'rich_text_1',
                                 'rich_text_2',
-                                'medium-image-right-column')
+                                'medium-image-right-column'
+                                'medium-image-right-column-2')
                              )
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
@@ -197,7 +202,8 @@ if os.environ.get('CMS', False):
                                 'content',
                                 'main_content',
                                 'additional_content',
-                                'medium-image-right-column',)
+                                'medium-image-right-column',
+                                'medium-image-right-column-2')
                              )
     Page.create_content_type(LargeImage, regions=(
                                 'about',
@@ -243,6 +249,7 @@ if os.environ.get('CMS', False):
                                 'main_content',
                                 'additional_content',
                                 'rich-text-left-column',
+                                'rich-text-left-column-2'
                                 'rich_text_content',
                                 'rich_text_1',
                                 'rich_text_2',)
@@ -253,7 +260,8 @@ if os.environ.get('CMS', False):
                                 'content',
                                 'main_content',
                                 'additional_content',
-                                'rich-text-left-column',
+                                'rich-text-left-column'
+                                'rich-text-left-column-2',
                                 'rich_text_content',
                                 'rich_text_1',
                                 'rich_text_2',)

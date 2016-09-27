@@ -29,5 +29,11 @@
         <div class="wrapper" style="padding-top:20px;">
             {% feincms_render_region feincms_page "additional_content" request %}
         </div>
+        <div class="wrapper" style="padding-top:20px;">
+            {% feincms_render_region feincms_page "rich-text-left-column-2" %}
+        </div>
+        <div class="col-md-6" style="float:right; text-align:center;">
+            {% feincms_render_region feincms_page "medium-image-right-column-2" request %}
+        </div>
     </div>
 {% endblock %}
