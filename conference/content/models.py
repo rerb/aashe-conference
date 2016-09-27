@@ -211,7 +211,7 @@ if os.environ.get('CMS', False):
                                 'main_content',
                                 'additional_content',
                                 'large_image',
-                                'rich-text-content',)
+                                'rich_text_content',)
                              )
     Page.create_content_type(TwoColumnKeynote, regions=(
                                 'about',
