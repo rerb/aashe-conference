@@ -168,7 +168,8 @@ if os.environ.get('CMS', False):
                                 'additional_content',
                                 'videos',
                                 'medium-image-right-column',
-                                'medium-image-right-column-2')
+                                'medium-image-right-column-2',
+                                'rich_text_content',)
                              )
     Page.create_content_type(LogoTicker, regions=('sponsors',))
     Page.create_content_type(ParallaxBox, regions=(
