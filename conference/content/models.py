@@ -123,7 +123,9 @@ Page.register_templates(
         'regions': (
             ('header_block', _('Header Block')),
             ('title_banner', _('Title Banner')),
-            ('videos', _('Videos')),
+            ('video-column-1', _('Video Column 1')),
+            ('video-column-2', _('Video Column 2')),
+            ('video-column-3', _('Video Column 3')),
             ('sponsors', _('Sponsors')),
         )},
     {
@@ -166,7 +168,9 @@ if os.environ.get('CMS', False):
                                 'content',
                                 'main_content',
                                 'additional_content',
-                                'videos',
+                                'video-column-1',
+                                'video-column-2',
+                                'video-column-3',
                                 'medium-image-right-column',
                                 'medium-image-right-column-2',
                                 'rich_text_content',)
@@ -188,8 +192,11 @@ if os.environ.get('CMS', False):
                                 'rich_text_content',
                                 'rich_text_1',
                                 'rich_text_2',
-                                'medium-image-right-column'
-                                'medium-image-right-column-2')
+                                'medium-image-right-column',
+                                'medium-image-right-column-2',
+                                'video-column-1',
+                                'video-column-2',
+                                'video-column-3',)
                              )
     Page.create_content_type(CallToAction, regions='call_to_action')
     Page.create_content_type(SingleButton)
