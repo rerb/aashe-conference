@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'psycopg2',
     'raven.contrib.django.raven_compat',
     'feincms',
+    'mptt',
     'feincms.module.page',
     'feincms.module.medialibrary',
     'sorl.thumbnail',

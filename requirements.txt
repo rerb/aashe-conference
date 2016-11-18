@@ -3,15 +3,17 @@ django-logical-rules
 django-s3-folder-storage
 
 # Deployment specific
-Pillow
 dj-database-url
 dj-static
 django-compressor==2.1
 django-heroku-memcacheify
 django-htmlmin==0.9.1
+django-mptt
+factory-boy==2.1.2
 feincms>=1.11
 gunicorn
 newrelic
+Pillow
 psycopg2
 pylibmc
 raven
