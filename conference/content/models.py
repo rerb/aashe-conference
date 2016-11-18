@@ -28,6 +28,7 @@ from types.table import TableContent
 from types.gallery_block import GalleryBlock
 from types.host_institutions import HostInstitutionBlock
 from types.pdf_embed import PDFEmbed
+from types.faq import FAQBlock
 
 
 """
@@ -285,6 +286,12 @@ if os.environ.get('CMS', False):
                                 'additional_content',
                                 'rich_text_1',
                                 'rich_text_2',)
+                             )
+    Page.create_content_type(FAQBlock, regions=(
+                                'content',
+                                'main_content',
+                                'rich_text_content',
+                                'additional_content',)
                              )
 
 """

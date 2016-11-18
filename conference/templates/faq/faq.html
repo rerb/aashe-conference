@@ -1,0 +1,20 @@
+{% load markup_tags %}
+
+<div id="accordion-v2" class="panel-group acc-v1">
+    {% for question in questions %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#FAQ-{{ question.id }}" data-parent="#accordion-v2" data-toggle="collapse" class="accordion-toggle collapsed" aria-expanded="false">
+                        <b>Q: </b>{{ question.question }}
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="FAQ-{{ question.id }}" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">
+                    {{ question.answer|apply_markup:"markdown" }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

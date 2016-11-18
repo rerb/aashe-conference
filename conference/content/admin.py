@@ -6,6 +6,7 @@ from types.header_box import HeaderBoxContent
 from types.pricing_table import RegistrationLevel, Deadline
 from types.host_institutions import HostInstitutionLogo, \
     HostInstitutionLogoCollection
+from types.faq import FAQ, FAQCollection
 
 
 class RegistrationLevelAdmin(admin.ModelAdmin):
@@ -28,3 +29,5 @@ admin.site.register(RegistrationLevel, RegistrationLevelAdmin)
 admin.site.register(Deadline, DeadlineAdmin)
 admin.site.register(HostInstitutionLogo)
 admin.site.register(HostInstitutionLogoCollection)
+admin.site.register(FAQ)
+admin.site.register(FAQCollection)
