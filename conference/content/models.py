@@ -287,12 +287,12 @@ if os.environ.get('CMS', False):
                                 'rich_text_1',
                                 'rich_text_2',)
                              )
-    Page.create_content_type(FAQBlock, regions=(
-                                'content',
-                                'main_content',
-                                'rich_text_content',
-                                'additional_content',)
-                             )
+    # Page.create_content_type(FAQBlock, regions=(
+    #                             'content',
+    #                             'main_content',
+    #                             'rich_text_content',
+    #                             'additional_content',)
+    #                          )
 
 """
     Register page extension modules
