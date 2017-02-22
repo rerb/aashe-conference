@@ -35,12 +35,12 @@
 }
 
 .frame {
-    height: 200px;
-    width: 200px;
+    height: 230px;
+    width: 230px;
     position: relative;
 }
 
-.owl-clients-v1 img {
+.owl-clients-v2 img {
   max-height: 100%;
   max-width: 100%;
   width: auto;
@@ -54,7 +54,11 @@
 }
 
 .owl-item {
-  width: 200px !important;
+  width: 230px !important;
+}
+
+.owl-controls {
+  display: None !important;
 }
 
 .panel-green {
