@@ -35,8 +35,8 @@
 }
 
 .frame {
-    height: 120px;
-    width: 120px;
+    height: 200px;
+    width: 200px;
     position: relative;
 }
 
@@ -51,6 +51,10 @@
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.owl-item {
+  width: 200px !important;
 }
 
 .panel-green {
