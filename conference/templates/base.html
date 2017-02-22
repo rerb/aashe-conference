@@ -114,6 +114,12 @@
             "/>
         </div>
     </noscript>
+    {{ block.super }}
+    <script>
+        $('.owl-carousel').owlCarousel({
+            autoWidth:true
+        })
+    </script>
 {% endblock %}
 {% block analytics %}
     {% add_analytics %}
