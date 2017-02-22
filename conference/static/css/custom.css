@@ -35,8 +35,8 @@
 }
 
 .frame {
-    height: 230px;
-    width: 230px;
+    height: 228px;
+    width: 228px;
     position: relative;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .owl-item {
-  width: 230px !important;
+  width: 228px !important;
 }
 
 .owl-controls {
