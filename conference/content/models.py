@@ -238,8 +238,9 @@ if os.environ.get('CMS', False):
                                 'twitter',
                                 'instagram',)
                              )
-    Page.create_content_type(FeaturedImageLinkPane, regions='featured')
-    Page.create_content_type(NewsLinkPane, regions=('featured',))
+    Page.create_content_type(FeaturedImageLinkPane, regions=('featured',
+                                                             'about',))
+    Page.create_content_type(NewsLinkPane, regions=('featured', 'about',))
     Page.create_content_type(HeaderBox, regions=('header_block',))
     Page.create_content_type(PricingTable, regions=('pricing_table',))
     Page.create_content_type(FeaturedPane, regions=(
