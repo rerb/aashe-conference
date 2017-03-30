@@ -28,3 +28,4 @@ https://github.com/AASHE/django-integration-settings/archive/master.zip
 https://github.com/feinheit/feincms_gallery/archive/master.zip
 https://github.com/jamstooks/feincms-tinymce-image-browser/archive/master.zip
 https://github.com/mliu7/django-minidetector/archive/master.zip
+https://github.com/AASHE/django-membersuite-auth/archive/master.zip
