@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="col-md-6 team-v7-img">
-        {% thumbnail image.file.url "600x400" as im %}
+        {% thumbnail image.file.url "600x400" crop="center" as im %}
             <img class="img-responsive full-width equal-height-column" src="{{ im.url }}" alt="" style="height: 456px;">
         {% endthumbnail %}
     </div>
