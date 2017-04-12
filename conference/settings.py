@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     'django_markup',
     'integration_settings.authentication',
     'integration_settings.google_analytics',
+    'django_membersuite_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -120,8 +121,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'conference.wsgi.application'
 
-AUTHENTICATION_BACKENDS = ('aashe.aasheauth.backends.AASHEBackend',
+AUTHENTICATION_BACKENDS = ('django_membersuite_auth.backends.MemberSuiteBackend',
                            'django.contrib.auth.backends.ModelBackend',)
+
+
+# Membersuite-auth settings
+DMA_COOKIE_SESSION = os.environ.get('DMA_COOKIE_SESSION', None)
+DMA_COOKIE_DOMAIN = os.environ.get('DMA_COOKIE_DOMAIN', None)
+
+MS_ACCESS_KEY = os.environ.get('MS_ACCESS_KEY', None)
+MS_SECRET_KEY = os.environ.get('MS_SECRET_KEY', None)
+MS_ASSOCIATION_ID = os.environ.get('MS_ASSOCIATION_ID', None)
 
 
 # Database

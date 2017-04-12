@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="login">
+        <h1 class="page-title">User account</h1>
+        <div class="block-content content">
+            <p>If you already have an AASHE Account, please sign-in below. If you do not have an AASHE Account, <a href="/user/register">click here to create one</a>.</p>
+        </div>
+        <form enctype='multipart/form-data' action="" method="post">{% csrf_token %}
+            {{ form }}
+            <input class="btn btn-success" type="submit" value="Log In" />
+        </form>
+    </div>
+
+    <div class="block block-block aashe-accounts" id="block-block-39">
+        <div class="block-content content">
+            <p>The following Web sites are powered by <a href="/accounts/help" class="accounts-logo">AASHE Accounts</a>:</p>
+            <ul>
+                <li>
+                    <a href="http://www.aashe.org/"><img src="http://www.aashe.org/files/AASHE.png" alt="AASHE.png" title="AASHE.png"></a><strong><a href="http://www.aashe.org/">AASHE</a></strong><br>
+                    The AASHE Web site is home to the AASHE Resource Center, blog, and AASHE Accounts system.
+                </li>
+                <li>
+                    <a href="http://stars.aashe.org/"><img src="http://www.aashe.org/files/STARS.jpeg" alt="STARS.jpeg" title="STARS.jpeg"></a><strong><a href="http://stars.aashe.org/">STARS</a></strong><br>
+                    The STARS Web site is home to STARS registration and the STARS Reporting Tool.
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
