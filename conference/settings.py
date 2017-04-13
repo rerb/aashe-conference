@@ -74,6 +74,7 @@ INSTALLED_APPS = (
     'integration_settings.authentication',
     'integration_settings.google_analytics',
     'django_membersuite_auth',
+    'aashestrap',
 )
 
 MIDDLEWARE_CLASSES = (
