@@ -12,7 +12,7 @@ django-mptt
 factory-boy==2.1.2
 feincms>=1.11
 gunicorn
-membersuite-api-client>=0.1.15
+membersuite-api-client>=0.1.17
 newrelic
 Pillow
 psycopg2
