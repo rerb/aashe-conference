@@ -11,7 +11,7 @@ class LogoGrid(models.Model):
         verbose_name = "Logo Image Grid"
 
     def render(self, **kwargs):
-        images = self.images.images.select_related()
+        images = self.images.images.select_related().order_by('name')
         return render_to_string('logo_grid/logo_grid.html', {
             'images': images,
         })
