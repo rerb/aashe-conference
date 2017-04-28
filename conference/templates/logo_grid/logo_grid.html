@@ -1,0 +1,15 @@
+{% load thumbnail %}
+{{ feincms_page.content.media }}
+<div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+  <div class="col-md-10 col-md-offset-1" style="padding:0;">
+        {% for image in images %}
+            <div class="col-md-3" style="padding: 0 10px 15px 10px;">
+              <a href="{{ image.url }}">
+                  {% thumbnail image.image.file.url "200x200" padding=True as im %}
+                      <img src="{{ im.url }}" alt="" />
+                  {% endthumbnail %}
+              </a>
+            </div>
+        {% endfor %}
+  </div>
+</div>

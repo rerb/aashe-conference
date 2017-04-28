@@ -41,4 +41,4 @@ class SponsorLogo(models.Model):
         verbose_name_plural = 'Sponsor Logos'
 
     def __unicode__(self):
-        return u'%s' % self.image
+        return u'%s' % self.name

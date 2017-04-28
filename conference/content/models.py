@@ -29,6 +29,7 @@ from types.gallery_block import GalleryBlock
 from types.host_institutions import HostInstitutionBlock
 from types.pdf_embed import PDFEmbed
 from types.faq import FAQBlock
+from types.logo_grid import LogoGrid
 
 
 """
@@ -293,6 +294,14 @@ if os.environ.get('CMS', False):
                                 'main_content',
                                 'rich_text_content',
                                 'additional_content',)
+                             )
+    Page.create_content_type(LogoGrid, regions=(
+                                'content',
+                                'main_content',
+                                'rick_text_content',
+                                'additional_content',
+                                'about',
+                                'featured',)
                              )
 
 """
