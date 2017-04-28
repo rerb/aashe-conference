@@ -171,3 +171,16 @@ li a {
   height: 344px;
   padding: 10px 0 10px 0;
 }
+
+.team-v7 .team-v7-img:after {
+  background: rgba(0,0,0,0);
+}
+
+.keynote-image {
+  position:absolute;
+  margin:auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
