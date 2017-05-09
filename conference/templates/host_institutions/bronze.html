@@ -2,7 +2,7 @@
 {{ feincms_page.content.media }}
 <div class="col-md-2 logo">
     <a href="{{ image.url }}">
-        {% thumbnail image.image.file.url "100x100" padding=True as im %}
+        {% thumbnail image.image.file.url "150x150" padding=True as im %}
             <img src="{{ im.url }}" alt="" />
         {% endthumbnail %}
     </a>
